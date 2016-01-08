@@ -4,12 +4,27 @@
   Description: A campaign theme.
   Author: Matt Popovich
 */
+/*===========<><><> [  Imports  ] <><><>=============*/
+/*===========<><><> [  CSS Reset  ] <><><>=============*/
 * {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+/*===========<><><> [  Colors  ] <><><>=============*/
+/*===========<><><> [  Fonts  ] <><><>=============*/
+@font-face {
+  font-family: "Loew";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/loew.eot?#iefix") format("embedded-opentype"), url("/fonts/loew.woff2") format("woff2"), url("/fonts/loew.woff") format("woff"), url("/fonts/loew.ttf") format("truetype"), url("/fonts/loew.svg#Loew") format("svg"); }
+* {
+  font-family: "Loew", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+.ct-bold {
+  font-family: "Loew", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/*===========<><><> [  Top Menu  ] <><><>=============*/
 .menu {
   background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -25,6 +40,26 @@
     padding: 0 0.5em;
     right: 0; }
 
+/*===========<><><> [  Footer  ] <><><>=============*/
+.ct-footer {
+  background-color: #12579E;
+  text-align: center;
+  color: #fff;
+  border: #5183B8; }
+
+/*===========<><><> [  Ask Boxes  ] <><><>=============*/
+.ct-asks-container {
+  color: #fff; }
+  .ct-asks-container .ct-ask-box {
+    display: inline-block;
+    padding: 3em;
+    width: 49%; }
+  .ct-asks-container .ct-ask-box-right {
+    background-color: #48A9DD; }
+  .ct-asks-container .ct-ask-box-left {
+    background-color: #429BCA; }
+
+/*===========<><><> [  Homepage Header  ] <><><>=============*/
 .ct-header {
   height: 380px;
   background-image: url(screenshot.jpg);
@@ -40,9 +75,7 @@
   max-width: 80vw;
   margin: 0.1em auto;
   color: #fff;
-  font-size: 2em; }
-
-.test {
-  size: 0; }
+  font-size: 2em;
+  font-family: "Loew", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

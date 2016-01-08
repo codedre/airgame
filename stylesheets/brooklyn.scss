@@ -5,14 +5,39 @@
   Author: Matt Popovich
 */
 
+/*===========<><><> [  Imports  ] <><><>=============*/
+
 @import "bourbon/bourbon";
 
+/*===========<><><> [  CSS Reset  ] <><><>=============*/
+
 * {
-  font-family: $helvetica;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/*===========<><><> [  Colors  ] <><><>=============*/
+
+$sky-light: #48A9DD;
+$sky-dark: #429BCA;
+$deep: #12579E;
+
+/*===========<><><> [  Fonts  ] <><><>=============*/
+
+@include font-face("Loew", "/fonts/loew");
+
+$bold: "Loew", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+* {
+  font-family: $bold;
+}
+
+.ct-bold {
+  font-family: $bold;
+}
+
+/*===========<><><> [  Top Menu  ] <><><>=============*/
 
 .menu {
   background: #fff;
@@ -33,6 +58,35 @@
   }
 }
 
+/*===========<><><> [  Footer  ] <><><>=============*/
+
+.ct-footer {
+  background-color: $deep;
+  text-align: center;
+  color: #fff;
+  border:
+  #5183B8
+}
+
+/*===========<><><> [  Ask Boxes  ] <><><>=============*/
+
+.ct-asks-container {
+  color: #fff;
+  .ct-ask-box {
+    display: inline-block;
+    padding: 3em;
+    width: 49%;
+  }
+  .ct-ask-box-right {
+    background-color: $sky-light;
+  }
+  .ct-ask-box-left {
+    background-color: $sky-dark;
+  }
+}
+
+/*===========<><><> [  Homepage Header  ] <><><>=============*/
+
 .ct-header {
   height: 380px;
   background-image: url(screenshot.jpg);
@@ -50,8 +104,5 @@
   margin: 0.1em auto;
   color: #fff;
   font-size: 2em;
-}
-
-.test {
-  size: 0;
+  font-family: $bold;
 }
