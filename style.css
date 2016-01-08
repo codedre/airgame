@@ -4,3 +4,9 @@
   Description: A campaign theme.
   Author: Matt Popovich
 */
+
+.ct-header {
+  height: 500px;
+  background-image: url(screenshot.png);
+  background-size: cover;
+}
