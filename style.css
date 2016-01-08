@@ -45,7 +45,8 @@
   background-color: #12579E;
   text-align: center;
   color: #fff;
-  border: #5183B8; }
+  border-top: 1px #5183B8 solid;
+  padding: 2em; }
 
 /*===========<><><> [  Ask Boxes  ] <><><>=============*/
 .ct-asks-container {

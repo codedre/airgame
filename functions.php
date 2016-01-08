@@ -20,18 +20,9 @@ function reset_permalinks() {
 }
 add_action( 'init', 'reset_permalinks' );
 
-//===========<><><> [  Theme Options page  ] <><><>=============//
+//===========<><><> [  Settings page  ] <><><>=============//
 
-add_action( 'admin_init', 'theme_options_init' );
-add_action( 'admin_menu', 'theme_options_add_page' );
-
-function theme_options_init(){
- register_setting( 'sample_options', 'sample_theme_options');
-}
-
-function theme_options_add_page() {
- add_theme_page( __( 'Theme Options', 'sampletheme' ), __( 'Theme Options', 'sampletheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
-}
+//jk
 
 
 ?>
