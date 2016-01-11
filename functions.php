@@ -1,6 +1,8 @@
 <?php
 
-//===========<><><> [  Style & script enqueue  ] <><><>=============//
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Style & script enqueue  ] <><><>=======================//
+////////////////////////////////////////////////////////////////////////////////
 
 function add_scripts(){
     wp_enqueue_style("styles", get_stylesheet_uri());
@@ -12,7 +14,9 @@ function add_scripts(){
 }
 add_action("wp_enqueue_scripts", "add_scripts");
 
-//===========<><><> [  Post structure > postname  ] <><><>=============//
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Post structure > postname  ] <><><>====================//
+////////////////////////////////////////////////////////////////////////////////
 
 function reset_permalinks() {
     global $wp_rewrite;
@@ -20,12 +24,36 @@ function reset_permalinks() {
 }
 add_action( 'init', 'reset_permalinks' );
 
-//===========<><><> [  Customizer Async Updating  ] <><><>=============//
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Kills comments dead. Good riddance.  ] <><><>==========//
+////////////////////////////////////////////////////////////////////////////////
 
-function tcx_customizer_live_preview() {
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+add_action('init', 'remove_comment_support', 100);
+
+function remove_comment_support() {
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Customizer Async Updating  ] <><><>====================//
+////////////////////////////////////////////////////////////////////////////////
+
+function customizer_live_preview() {
 
     wp_enqueue_script(
-        'tcx-theme-customizer',
+        'theme-customizer',
         get_template_directory_uri() . '/js/theme-customizer.js',
         array( 'jquery', 'customize-preview' ),
         '0.3.0',
@@ -33,11 +61,13 @@ function tcx_customizer_live_preview() {
     );
 
 }
-add_action( 'customize_preview_init', 'tcx_customizer_live_preview' );
+add_action( 'customize_preview_init', 'customizer_live_preview' );
 
-//===========<><><> [  Customizer Custom Options  ] <><><>=============//
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Customizer Custom Options  ] <><><>====================//
+////////////////////////////////////////////////////////////////////////////////
 
-function tcx_register_theme_customizer( $wp_customize ) {
+function register_theme_customizer( $wp_customize ) {
 
   //=============== [  Disclaimers Section  ]
 
@@ -54,7 +84,7 @@ function tcx_register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
 		'airgame_disclaimer',
 		array(
-			'default'            => 'Paid for by Cheryl Anderson for Congress',
+			'default'            => 'Paid for by...',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
@@ -73,7 +103,7 @@ function tcx_register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_copyright',
     array(
-      // 'default'            => 'Copyright 2016 Cheryl Anderson for Congress. All Rights Reserved.',
+      'default'            => 'Copyright 2016...',
       'sanitize_callback'  => 'airgame_sanitize',
       'transport'          => 'postMessage'
     )
@@ -88,31 +118,57 @@ function tcx_register_theme_customizer( $wp_customize ) {
   );
 
 }
-add_action( 'customize_register', 'tcx_register_theme_customizer' );
+add_action( 'customize_register', 'register_theme_customizer' );
 
-function tcx_customizer_css() {
+//=============== [  CSS to be modified via Customizer  ]
+
+function customizer_css() {
     ?>
     <style type="text/css">
 
     </style>
     <?php
 }
-add_action( 'wp_head', 'tcx_customizer_css' );
+add_action( 'wp_head', 'customizer_css' );
 
-//===========<><><> [  Customizer Input Sanitizer  ] <><><>=============//
+//=============== [  Text input sanitizer function  ]
 
-/**
- * Sanitizes the incoming input and returns it prior to serialization.
- *
- * @param      string    $input    The string to sanitize
- * @return     string              The sanitized string
- * @package    tcx
- * @since      0.5.0
- * @version    1.0.0
- */
 function airgame_sanitize( $input ) {
 	return strip_tags( stripslashes( $input ) );
 }
+
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Custom Post Types  ] <><><>============================//
+////////////////////////////////////////////////////////////////////////////////
+
+//=============== [  NGP Form Page  ]
+
+function ngp_form_pages_init() {
+    $args = array(
+      'label' => 'NGP Form Pages',
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'page',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'forms'),
+        'query_var' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',)
+        );
+    register_post_type( 'ngp-form-pages', $args );
+}
+add_action( 'init', 'ngp_form_pages_init' );
+
 
 
 
