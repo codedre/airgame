@@ -155,19 +155,33 @@ function ngp_form_pages_init() {
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array(
             'title',
-            'editor',
-            'excerpt',
-            'trackbacks',
             'custom-fields',
-            'comments',
-            'revisions',
-            'thumbnail',
-            'author',
-            'page-attributes',)
+            'thumbnail',)
         );
     register_post_type( 'ngp-form-pages', $args );
 }
 add_action( 'init', 'ngp_form_pages_init' );
+
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Admin Dashboard Cleanup  ] <><><>======================//
+////////////////////////////////////////////////////////////////////////////////
+
+function remove_dashboard_meta() {
+        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+}
+add_action( 'admin_init', 'remove_dashboard_meta' );
+
+
+
+
 
 
 
