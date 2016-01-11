@@ -1,2 +1,2 @@
-# campaign-theme
+# airgame
 campaign wp theme
