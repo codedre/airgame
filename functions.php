@@ -79,7 +79,7 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //----------- [  Disclaimer Setting & Control  ]
+  //----------- [  Disclaimers > Disclaimer Setting & Control  ]
 
   $wp_customize->add_setting(
 		'airgame_disclaimer',
@@ -98,7 +98,7 @@ function register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-  //----------- [  Copyright Setting & Control  ]
+  //----------- [  Disclaimers > Copyright Setting & Control  ]
 
   $wp_customize->add_setting(
     'airgame_copyright',
@@ -117,8 +117,77 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
+  //=============== [  Email Signup Section  ]
+
+  $wp_customize->add_section(
+    'email_signup',
+    array(
+        'title'     => 'Email Signup',
+        'priority'  => 300
+    )
+  );
+
+  //=============== [  Donate Button Section  ]
+
+  $wp_customize->add_section(
+    'donate_button',
+    array(
+        'title'     => 'Donate Button',
+        'priority'  => 400
+    )
+  );
+
+  //----------- [  Donate Button > Donate Button Text Setting & Control  ]
+
+  $wp_customize->add_setting(
+		'airgame_donate_button_text',
+		array(
+			'default'            => 'Donate',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_donate_button_text',
+		array(
+			'section'  => 'donate_button',
+			'label'    => 'Donate Button Text',
+			'type'     => 'text'
+		)
+	);
+
+  //=============== [  Volunteer Button Section  ]
+
+  $wp_customize->add_section(
+    'volunteer_button',
+    array(
+        'title'     => 'Volunteer Button',
+        'priority'  => 500
+    )
+  );
+
+  //----------- [  Volunteer Button > Volunteer Button Text Setting & Control ]
+
+  $wp_customize->add_setting(
+		'airgame_volunteer_button_text',
+		array(
+			'default'            => 'Volunteer',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_volunteer_button_text',
+		array(
+			'section'  => 'volunteer_button',
+			'label'    => 'Volunteer Button Text',
+			'type'     => 'text'
+		)
+	);
+
 }
 add_action( 'customize_register', 'register_theme_customizer' );
+
 
 //=============== [  CSS to be modified via Customizer  ]
 
@@ -155,12 +224,32 @@ function ngp_form_pages_init() {
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array(
             'title',
-            'custom-fields',
+            'editor',
             'thumbnail',)
         );
     register_post_type( 'ngp-form-pages', $args );
 }
 add_action( 'init', 'ngp_form_pages_init' );
+
+//----------- [  NGP Form Page Meta Boxes  ]
+
+function prfx_custom_meta() {
+    add_meta_box( 'prfx_meta', __( 'Meta Box Title', 'prfx-textdomain' ), 'prfx_meta_callback', 'post' );
+}
+add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+
+function prfx_meta_callback( $post ) {
+  wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+  $prfx_stored_meta = get_post_meta( $post->ID );
+  ?>
+
+  <p>
+      <label for="meta-text" class="prfx-row-title"><?php _e( 'Example Text Input', 'prfx-textdomain' )?></label>
+      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
+  </p>
+
+  <?php
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  Admin Dashboard Cleanup  ] <><><>======================//
