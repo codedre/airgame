@@ -169,46 +169,74 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //=============== [  Donate Button Section  ]
+  //----------- [  Email Signup > Email Signup Button Call to Action  ]
+
+  $wp_customize->add_setting(
+    'airgame_email_signup_button_call_to_action',
+    array(
+      'default'            => 'Join the Campaign',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_email_signup_button_call_to_action',
+    array(
+      'section'  => 'email_signup',
+      'label'    => 'Email Signup Call to Action',
+      'type'     => 'text'
+    )
+  );
+
+  //----------- [  Email Signup > Email Signup Button Text  ]
+
+  $wp_customize->add_setting(
+    'airgame_email_signup_button_text',
+    array(
+      'default'            => 'I\'m In!',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_email_signup_button_text',
+    array(
+      'section'  => 'email_signup',
+      'label'    => 'Email Signup Button Text',
+      'type'     => 'text'
+    )
+  );
+
+  //=============== [  Contribute & Volunteer Buttons Section  ]
 
   $wp_customize->add_section(
-    'donate_button',
+    'contribute_volunteer',
     array(
-        'title'     => 'Donate Button',
+        'title'     => 'Contribute & Volunteer Buttons',
         'priority'  => 400
     )
   );
 
-  //----------- [  Donate Button > Donate Button Text Setting & Control  ]
+  //----------- [  Contribute & Volunteer Buttons > Contribute Button Text Setting & Control  ]
 
   $wp_customize->add_setting(
-		'airgame_donate_button_text',
+		'airgame_contribute_button_text',
 		array(
-			'default'            => 'Donate',
+			'default'            => 'Contribute',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
 	);
 	$wp_customize->add_control(
-		'airgame_donate_button_text',
+		'airgame_contribute_button_text',
 		array(
-			'section'  => 'donate_button',
-			'label'    => 'Donate Button Text',
+			'section'  => 'contribute_volunteer',
+			'label'    => 'Contribute Button Text',
 			'type'     => 'text'
 		)
 	);
 
-  //=============== [  Volunteer Button Section  ]
-
-  $wp_customize->add_section(
-    'volunteer_button',
-    array(
-        'title'     => 'Volunteer Button',
-        'priority'  => 500
-    )
-  );
-
-  //----------- [  Volunteer Button > Volunteer Button Text Setting & Control ]
+  //----------- [  Contribute & Volunteer Buttons > Volunteer Button Text Setting & Control ]
 
   $wp_customize->add_setting(
 		'airgame_volunteer_button_text',
@@ -221,11 +249,59 @@ function register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'airgame_volunteer_button_text',
 		array(
-			'section'  => 'volunteer_button',
+			'section'  => 'contribute_volunteer',
 			'label'    => 'Volunteer Button Text',
 			'type'     => 'text'
 		)
 	);
+
+  //=============== [  Social Media Links Section  ]
+
+  $wp_customize->add_section(
+    'social_media',
+    array(
+        'title'     => 'Social Media Links',
+        'priority'  => 500
+    )
+  );
+
+  //----------- [  Social Media Links > Facebook Page URL  ]
+
+  $wp_customize->add_setting(
+		'airgame_facebook_page_url',
+		array(
+			'default'            => 'http://facebook.com/...',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_facebook_page_url',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Facebook Page URL',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  Social Media Links > Twitter Profile URL  ]
+
+  $wp_customize->add_setting(
+    'airgame_twitter_profile_url',
+    array(
+      'default'            => 'http://twitter.com/...',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_twitter_profile_url',
+    array(
+      'section'  => 'social_media',
+      'label'    => 'Twitter Profile URL',
+      'type'     => 'text'
+    )
+  );
 
 }
 add_action( 'customize_register', 'register_theme_customizer' );
@@ -261,7 +337,7 @@ function airgame_sanitize( $input ) {
 // NGP Form Pages use Featured Images for background photos.
 add_theme_support( 'post-thumbnails' );
 
-// Moves all "advanced" metaboxes above the default editor.
+// Moves all "advanced" context fields (ie metaboxes) above the default editor.
 add_action('edit_form_after_title', function() {
     global $post, $wp_meta_boxes;
     do_meta_boxes(get_current_screen(), 'advanced', $post);
@@ -292,13 +368,20 @@ add_action( 'init', 'ngp_form_pages_init' );
 
 //----------- [  NGP Form Page Meta Boxes  ]
 
+//Creates meta box
 function ngp_data_id_custom_meta() {
-    add_meta_box( 'prfx_meta', __( 'NGP Form Page Editor', 'ngp-data-id-textdomain' ), 'ngp_data_id_meta_callback', 'ngp-form-pages' );
+    add_meta_box(
+      'ngp_data_id_custom_meta', //Unique meta box ID
+      __( 'NGP Form Page Editor', 'ngp-data-id-textdomain' ), //Meta box title
+      'ngp_data_id_meta_callback', //Callback function
+      'ngp-form-pages' //Creates boxes only on NGP Form Pages
+    );
 }
 add_action( 'add_meta_boxes', 'ngp_data_id_custom_meta' );
 
+//Displays meta box
 function ngp_data_id_meta_callback( $post ) {
-  wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+  wp_nonce_field( basename( __FILE__ ), 'ngp_data_id_nonce' );
   $ngp_data_id_stored_meta = get_post_meta( $post->ID );
   ?>
 
@@ -307,14 +390,17 @@ function ngp_data_id_meta_callback( $post ) {
     This editor allows you to create donation pages, volunteer signup pages, other types of signup pages, and petition pages in a few simple steps.
   </p>
   <p>
-    Step 1: Create a form in NGP and copy its <em>data-id</em>, then paste it into the <em>NGP Form Data-ID</em> box below. Click here for more help on making NGP forms and retrieving the data-id.
+    Step 1: Create a form in NGP and copy its <em>data-id</em>, then paste it into the <em>NGP Form Data-ID</em> box below.
+    Click here for more help on making NGP forms and retrieving the data-id.
+    NOTE: Some data-id values have a minus sign / hypen in front of them. This is part of the data-id.
+    If your data-id begins with a hypen, don't omit it or your form will not render.
   </p>
   <p>
       <label for="meta-text" class="ngp-data-id-row-title"><?php _e( 'NGP Form Data-ID', 'ngp-data-id-textdomain' )?></label>
-      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $ngp_data_id_stored_meta['meta-text'][0]; ?>" />
+      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $ngp_data_id_stored_meta['meta-text'] ) ) echo $ngp_data_id_stored_meta['meta-text'][0]; ?>" />
   </p>
   <p>
-    Step 2: Click the white box above to edit the form page title and the small Edit button below it to edit the form page address.
+    Step 2: Click the white box at the top of the page to edit the form page title and the small Edit button below it to edit the form page address.
   </p>
   <p>
     Step 3: Use the large text editor underneath this box to edit the form page text.
@@ -326,6 +412,27 @@ function ngp_data_id_meta_callback( $post ) {
 
   <?php
 }
+
+//Saves meta box data to database
+function ngp_data_id_meta_save( $post_id ) {
+
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'ngp_data_id_nonce' ] ) && wp_verify_nonce( $_POST[ 'ngp_data_id_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+
+    // Checks for input and sanitizes/saves if needed
+    if( isset( $_POST[ 'meta-text' ] ) ) {
+        update_post_meta( $post_id, 'meta-text', sanitize_text_field( $_POST[ 'meta-text' ] ) );
+    }
+
+}
+add_action( 'save_post', 'ngp_data_id_meta_save' );
 
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  Admin Dashboard Cleanup  ] <><><>======================//
