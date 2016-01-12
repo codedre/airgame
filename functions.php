@@ -236,6 +236,25 @@ function register_theme_customizer( $wp_customize ) {
 		)
 	);
 
+  //----------- [  Contribute & Volunteer Buttons > Form Linked to Contribute Button Setting & Control ]
+
+  $wp_customize->add_setting(
+    'airgame_contribute_button_form' . $count,
+    array(
+      'default'           => '',
+      'sanitize_callback' => 'absint'
+    )
+  );
+
+  $wp_customize->add_control(
+    'airgame_contribute_button_form' . $count,
+    array(
+      'label'    => __( 'Form Linked to Contribute Button', 'textdomain' ),
+      'section'  => 'contribute_volunteer',
+      'type'     => 'dropdown-pages'
+    )
+  );
+
   //----------- [  Contribute & Volunteer Buttons > Volunteer Button Text Setting & Control ]
 
   $wp_customize->add_setting(
@@ -254,6 +273,25 @@ function register_theme_customizer( $wp_customize ) {
 			'type'     => 'text'
 		)
 	);
+
+  //----------- [  Contribute & Volunteer Buttons > Form Linked to Volunt Button Setting & Control ]
+
+  $wp_customize->add_setting(
+    'airgame_volunteer_button_form',
+    array(
+      'default'           => '',
+      'sanitize_callback' => 'absint'
+    )
+  );
+
+  $wp_customize->add_control(
+    'airgame_volunteer_button_form',
+    array(
+      'label'    => __( 'Form Linked to Volunteer Button', 'textdomain' ),
+      'section'  => 'contribute_volunteer',
+      'type'     => 'dropdown-pages'
+    )
+  );
 
   //=============== [  Social Media Links Section  ]
 
@@ -396,8 +434,8 @@ function ngp_data_id_meta_callback( $post ) {
     If your data-id begins with a hypen, don't omit it or your form will not render.
   </p>
   <p>
-      <label for="meta-text" class="ngp-data-id-row-title"><?php _e( 'NGP Form Data-ID', 'ngp-data-id-textdomain' )?></label>
-      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $ngp_data_id_stored_meta['meta-text'] ) ) echo $ngp_data_id_stored_meta['meta-text'][0]; ?>" />
+      <label for="ngp-data-id-meta-text" class="ngp-data-id-row-title"><?php _e( 'NGP Form Data-ID', 'ngp-data-id-textdomain' )?></label>
+      <input type="text" name="ngp-data-id-meta-text" id="ngp-data-id-meta-text" value="<?php if ( isset ( $ngp_data_id_stored_meta['ngp-data-id-meta-text'] ) ) echo $ngp_data_id_stored_meta['ngp-data-id-meta-text'][0]; ?>" />
   </p>
   <p>
     Step 2: Click the white box at the top of the page to edit the form page title and the small Edit button below it to edit the form page address.
@@ -427,8 +465,8 @@ function ngp_data_id_meta_save( $post_id ) {
     }
 
     // Checks for input and sanitizes/saves if needed
-    if( isset( $_POST[ 'meta-text' ] ) ) {
-        update_post_meta( $post_id, 'meta-text', sanitize_text_field( $_POST[ 'meta-text' ] ) );
+    if( isset( $_POST[ 'ngp-data-id-meta-text' ] ) ) {
+        update_post_meta( $post_id, 'ngp-data-id-meta-text', sanitize_text_field( $_POST[ 'ngp-data-id-meta-text' ] ) );
     }
 
 }
