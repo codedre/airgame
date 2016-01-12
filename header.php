@@ -1,4 +1,11 @@
 <!doctype html>
+<!--
+
+This site is powered by Airgame.
+
+Visit http://airga.me to learn more.
+
+-->
 <html>
   <head>
     <title>Campaign Theme</title>
