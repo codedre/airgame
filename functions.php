@@ -4,6 +4,9 @@
 //===========<><><> [  Style & script enqueue  ] <><><>=======================//
 ////////////////////////////////////////////////////////////////////////////////
 
+//This is a core function which allows Wordpress to recognize other CSS and
+//JavaScript files.
+
 function add_scripts(){
     wp_enqueue_style("styles", get_stylesheet_uri());
     wp_enqueue_script(
@@ -15,8 +18,20 @@ function add_scripts(){
 add_action("wp_enqueue_scripts", "add_scripts");
 
 ////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Post structure > postname  ] <><><>====================//
+//===========<><><> [  Custom meta boxes  ] <><><>============================//
 ////////////////////////////////////////////////////////////////////////////////
+
+//nothing here yet
+
+////////////////////////////////////////////////////////////////////////////////
+//===========<><><> [  Defaults post structure to postname  ] <><><>==========//
+////////////////////////////////////////////////////////////////////////////////
+
+//The perferred URL structure for SEO, sharing, and human-readability is
+//definitely /%postname%/, which omits ugly date / author taxonomies. This sets
+//the post structure to postname by default. If you're switching to this
+//platform on a site with significant inbound traffic to extant links (which is
+//not recommended), you may want to override this setting.
 
 function reset_permalinks() {
     global $wp_rewrite;
@@ -25,8 +40,12 @@ function reset_permalinks() {
 add_action( 'init', 'reset_permalinks' );
 
 ////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Kills comments dead. Good riddance.  ] <><><>==========//
+//===========<><><> [  Kills comments dead  ] <><><>==========================//
 ////////////////////////////////////////////////////////////////////////////////
+
+//Good riddance. If you want comments, (and you shouldn't, they're bad and have
+//no place on a campaign site) then use something like Disqus, which is better
+//in every way.
 
 add_action( 'admin_menu', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
@@ -47,8 +66,11 @@ function mytheme_admin_bar_render() {
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 
 ////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Customizer Async Updating  ] <><><>====================//
+//===========<><><> [  Customizer async updating  ] <><><>====================//
 ////////////////////////////////////////////////////////////////////////////////
+
+//Calls to theme-customizer.js, which allows realtime asynchronous updating of
+//changes made in the Customizer so users can watch them being applied.
 
 function customizer_live_preview() {
 
@@ -64,10 +86,30 @@ function customizer_live_preview() {
 add_action( 'customize_preview_init', 'customizer_live_preview' );
 
 ////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Customizer Custom Options  ] <><><>====================//
+//===========<><><> [  Customizer custom options  ] <><><>====================//
 ////////////////////////////////////////////////////////////////////////////////
 
+//To ensure forward-compatibility with Calypso, Airgame's options are located
+//either on the Customizer screen (Appearance > Customize) or on individual
+//post / page / custom post type pages.
+
 function register_theme_customizer( $wp_customize ) {
+
+  //----------- [  Removes Static Front Page  ]
+
+  //Airgame forces a static front page. It is not recommended for users to
+  //switch to a blog posts front page. This removes that option from the
+  //Customizer screen.
+
+  $wp_customize->remove_section( 'static_front_page' );
+
+  //=============== [  Title & Icon (i.e. Site Identity) Section  ]
+
+  //Allows the Site Title to be updated in realtime.
+  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+
+  //Removes the Blog Description text field. This theme does not use it.
+  $wp_customize->remove_control('blogdescription');
 
   //=============== [  Disclaimers Section  ]
 
@@ -202,6 +244,9 @@ add_action( 'wp_head', 'customizer_css' );
 
 //=============== [  Text input sanitizer function  ]
 
+//This function prevents the user from inadvertantly running commands against
+//their own MySQL database when inputting text in Customizer text fields.
+
 function airgame_sanitize( $input ) {
 	return strip_tags( stripslashes( $input ) );
 }
@@ -210,43 +255,74 @@ function airgame_sanitize( $input ) {
 //===========<><><> [  Custom Post Types  ] <><><>============================//
 ////////////////////////////////////////////////////////////////////////////////
 
+//=============== [  Global settings  ]
+
+// Forces Featured Image box on custom post types.
+// NGP Form Pages use Featured Images for background photos.
+add_theme_support( 'post-thumbnails' );
+
+// Moves all "advanced" metaboxes above the default editor.
+add_action('edit_form_after_title', function() {
+    global $post, $wp_meta_boxes;
+    do_meta_boxes(get_current_screen(), 'advanced', $post);
+    unset($wp_meta_boxes[get_post_type($post)]['advanced']);
+});
+
 //=============== [  NGP Form Page  ]
 
 function ngp_form_pages_init() {
     $args = array(
       'label' => 'NGP Form Pages',
-        'public' => true,
-        'show_ui' => true,
-        'capability_type' => 'page',
-        'hierarchical' => false,
-        'rewrite' => array('slug' => 'forms'),
-        'query_var' => true,
-        'menu_icon' => 'dashicons-clipboard',
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',)
-        );
+      'public' => true,
+      'show_ui' => true,
+      'capability_type' => 'page',
+      'hierarchical' => false,
+      'rewrite' => array('slug' => 'forms'),
+      'query_var' => true,
+      'menu_icon' => 'dashicons-clipboard',
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        )
+      );
     register_post_type( 'ngp-form-pages', $args );
 }
 add_action( 'init', 'ngp_form_pages_init' );
 
 //----------- [  NGP Form Page Meta Boxes  ]
 
-function prfx_custom_meta() {
-    add_meta_box( 'prfx_meta', __( 'Meta Box Title', 'prfx-textdomain' ), 'prfx_meta_callback', 'post' );
+function ngp_data_id_custom_meta() {
+    add_meta_box( 'prfx_meta', __( 'NGP Form Page Editor', 'ngp-data-id-textdomain' ), 'ngp_data_id_meta_callback', 'ngp-form-pages' );
 }
-add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+add_action( 'add_meta_boxes', 'ngp_data_id_custom_meta' );
 
-function prfx_meta_callback( $post ) {
+function ngp_data_id_meta_callback( $post ) {
   wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
-  $prfx_stored_meta = get_post_meta( $post->ID );
+  $ngp_data_id_stored_meta = get_post_meta( $post->ID );
   ?>
 
+  <h3>How to Create an NGP Form Page</h3>
   <p>
-      <label for="meta-text" class="prfx-row-title"><?php _e( 'Example Text Input', 'prfx-textdomain' )?></label>
-      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
+    This editor allows you to create donation pages, volunteer signup pages, other types of signup pages, and petition pages in a few simple steps.
   </p>
+  <p>
+    Step 1: Create a form in NGP and copy its <em>data-id</em>, then paste it into the <em>NGP Form Data-ID</em> box below. Click here for more help on making NGP forms and retrieving the data-id.
+  </p>
+  <p>
+      <label for="meta-text" class="ngp-data-id-row-title"><?php _e( 'NGP Form Data-ID', 'ngp-data-id-textdomain' )?></label>
+      <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $ngp_data_id_stored_meta['meta-text'][0]; ?>" />
+  </p>
+  <p>
+    Step 2: Click the white box above to edit the form page title and the small Edit button below it to edit the form page address.
+  </p>
+  <p>
+    Step 3: Use the large text editor underneath this box to edit the form page text.
+  </p>
+  <p>
+    Step 4: Set a background image for the form page with the Featured Image box on the right. Click here for help with choosing an image that conforms to best practices.
+  </p>
+
 
   <?php
 }
@@ -255,18 +331,18 @@ function prfx_meta_callback( $post ) {
 //===========<><><> [  Admin Dashboard Cleanup  ] <><><>======================//
 ////////////////////////////////////////////////////////////////////////////////
 
-function remove_dashboard_meta() {
-        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-        remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-        remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
-        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-}
-add_action( 'admin_init', 'remove_dashboard_meta' );
+// function remove_dashboard_meta() {
+//         remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+//         remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+//         remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+//         remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+// }
+// add_action( 'admin_init', 'remove_dashboard_meta' );
 
 
 
