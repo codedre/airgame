@@ -20,13 +20,22 @@ function add_scripts(){
       array("jquery") // Dependent scripts
     );
 
+    // Calls proper styles on front page load only
+    if ( is_front_page() ) {
+      wp_register_style(
+        'airgame-front-page-style', // Stylesheet short handle
+        get_template_directory_uri() . '/styles/airgame-front-page-style.css' // Path
+      );
+      wp_enqueue_style( 'airgame-front-page-style' );
+    }
+
     // Calls proper styles on NGP Form Page load only
     if ( get_post_type() == 'ngp-form-pages' ) {
       wp_register_style(
-        'ngp-form-pages', // Stylesheet short handle
+        'airgame-ngp-form-pages-style', // Stylesheet short handle
         get_template_directory_uri() . '/styles/airgame-ngp-form-pages-style.css' // Path
       );
-      wp_enqueue_style( 'ngp-form-pages' );
+      wp_enqueue_style( 'airgame-ngp-form-pages-style' );
     }
 
 }
