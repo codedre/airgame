@@ -4,3 +4,38 @@
   Description: A political campaign theme.
   Author: Matt Popovich
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #0C2233;
+}
+
+/*
+*=====================[ Footer ]================================================
+*/
+
+.airgame-footer {
+  text-align: center;
+  color: #065471;
+  background-color: #0C2233;
+}
+
+/*
+*=================[ NGP Form Pages ]============================================
+*/
+
+.ngp-form-page-body {
+   width: 100%;
+   width: 100vw;
+   background-color: #065471;
+}
+
+.ngp-form-page-container {
+
+}
