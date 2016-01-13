@@ -10,16 +10,17 @@
 function add_scripts(){
 
     // Calls base theme styles. Do not touch! Theme will break!
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
+    wp_enqueue_style(
+      'style', get_stylesheet_uri() );
 
-    // Calls base script
+    // Calls base script, app.js
     wp_enqueue_script(
       "airgame-app", // Script short handle
       get_template_directory_uri() . "/scripts/airgame-app.js", // Path
       array("jquery") // Dependent scripts
     );
 
-    // NGP Form Page styles
+    // Calls proper styles on NGP Form Page load only
     if ( get_post_type() == 'ngp-form-pages' ) {
       wp_register_style(
         'ngp-form-pages', // Stylesheet short handle
