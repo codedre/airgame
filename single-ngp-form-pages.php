@@ -1,3 +1,9 @@
+<?php
+  // Retrives NGP Form Pages stylesheet
+  wp_enqueue_style( 'ngp-form-pages' );
+?>
+
+
 <div id="header">
   <?php get_header(); ?>
 </div>

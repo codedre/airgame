@@ -8,12 +8,26 @@
 //JavaScript files.
 
 function add_scripts(){
-    wp_enqueue_style("styles", get_stylesheet_uri());
+
+    // Calls base theme styles. Do not touch! Theme will break!
+    wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+    // Calls base script
     wp_enqueue_script(
-      "app",
-      get_template_directory_uri() . "/js/app.js",
-      array("jquery")
+      "airgame-app", // Script short handle
+      get_template_directory_uri() . "/scripts/airgame-app.js", // Path
+      array("jquery") // Dependent scripts
     );
+
+    // NGP Form Page style registration
+    wp_register_style(
+      'ngp-form-pages', // Stylesheet short handle
+      get_template_directory_uri() . '/css/airgame-ngp-form-pages-style.css', // Path
+      array( ), // No dependent styles
+      null, // No version number
+      'screen' // No CSS media type
+    );
+
 }
 add_action("wp_enqueue_scripts", "add_scripts");
 
@@ -75,8 +89,8 @@ add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 function customizer_live_preview() {
 
     wp_enqueue_script(
-        'theme-customizer',
-        get_template_directory_uri() . '/js/theme-customizer.js',
+        'airgame-theme-customizer',
+        get_template_directory_uri() . '/scripts/airgame-theme-customizer.js',
         array( 'jquery', 'customize-preview' ),
         '0.3.0',
         true
