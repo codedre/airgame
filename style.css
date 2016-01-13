@@ -27,7 +27,6 @@ body {
 .airgame-body {
    width: 100%;
    width: 100vw;
-   padding: 50px;
 }
 
 .airgame-container {
@@ -36,11 +35,40 @@ body {
 }
 
 /*
+*=====================[ Menu ]================================================
+*/
+
+/*.menu {
+  background: rgba(255, 0, 0, 0.2);
+  position: fixed;
+  margin: 0 auto;
+}
+
+.menu ul {
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.menu ul li{
+    display:inline;
+}
+.menu ul li a{
+    display:inline-block;
+    padding:10px;
+}*/
+
+/*
 *=====================[ Footer ]================================================
 */
 
-.airgame-footer {
+.airgame-footer, .airgame-disclaimer-container, .airgame-copyright-container {
   text-align: center;
+}
+
+.airgame-footer {
   color: #065471;
   background-color: #0C2233;
   padding: 40px;
@@ -55,4 +83,8 @@ body {
   margin: 0 auto 20px auto;
   padding: 10px;
   border: 1.5px solid #065471;
+}
+
+.airgame-copyright-container {
+  color: #065471;
 }

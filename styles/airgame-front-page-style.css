@@ -1,0 +1,15 @@
+/*
+*=================[ Front page ]================================================
+*/
+
+.front-page-body {
+  background-color: #fff;
+}
+
+.front-page-hero-box {
+  min-height: 500px;
+  color: #fff;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+}

@@ -47,9 +47,9 @@
           ?>"></div>
         </div>
 
-      </div> <!-- .ngp-form-page-form-sidebar -->
-  </div> <!-- .ngp-form-page-container -->
-</div> <!-- .ngp-form-page-body -->
+      </div> <!-- ngp-form-page-form-sidebar -->
+  </div> <!-- airgame-container ngp-form-page-container -->
+</div> <!-- airgame-body ngp-form-page-body -->
 
 <!--===========<><><> [  Footer  ] <><><>=============-->
 

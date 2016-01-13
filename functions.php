@@ -83,11 +83,11 @@ function remove_comment_support() {
     remove_post_type_support( 'page', 'comments' );
 }
 
-function mytheme_admin_bar_render() {
+function airgame_admin_bar_render() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
 }
-add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'airgame_admin_bar_render' );
 
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  Customizer async updating  ] <><><>====================//

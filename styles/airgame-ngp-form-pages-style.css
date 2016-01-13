@@ -3,10 +3,11 @@
 */
 
 .ngp-form-page-body {
-   color: #fff;
-   background-color: #0A91AB;
-   background-size: cover;
-   background-position: center;
+  color: #fff;
+  padding: 50px;
+  background-color: #0A91AB;
+  background-size: cover;
+  background-position: center;
 }
 
 .ngp-form-page-container {
