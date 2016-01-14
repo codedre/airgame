@@ -16,23 +16,10 @@ require_once( get_template_directory() . '/functions/airgame-wordpress-override-
 // Custom post types setup
 require_once( get_template_directory() . '/functions/airgame-custom-post-types-functions.php' );
 
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Menu init  ] <><><>====================================//
-////////////////////////////////////////////////////////////////////////////////
+//Menu initialization
+require_once( get_template_directory() . '/functions/airgame-menu-functions.php' );
 
-function airgame_register_theme_menu() {
-    register_nav_menu( 'primary', 'Main Navigation Menu' );
-}
-add_action( 'init', 'airgame_register_theme_menu' );
+//Font loading
+require_once( get_template_directory() . '/functions/airgame-font-functions.php' );
 
-
-
-
-
-
-
-
-
-
-//don't type below here, ya dingus
 ?>
