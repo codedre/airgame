@@ -5,18 +5,18 @@
 //--------------------------Table of Contents---------------------------------//
 
 //====<><><> [  1. Defaults post structure to postname  ]
-//====<><><> [  2. Kills comments dead  ]
+//====<><><> [  2. Disables comments  ]
 //====<><><> [  3. Admin Dashboard Cleanup  ]
 
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  1. Defaults post structure to postname  ] <><><>=======//
 ////////////////////////////////////////////////////////////////////////////////
 
-//The perferred URL structure for SEO, sharing, and human-readability is
-//definitely /%postname%/, which omits ugly date / author taxonomies. This sets
-//the post structure to postname by default. If you're switching to this
-//platform on a site with significant inbound traffic to extant links (which is
-//not recommended), you may want to override this setting.
+// The perferred URL structure for SEO, sharing, and human-readability is
+// definitely /%postname%/, which omits ugly date / author taxonomies. This sets
+// the post structure to postname by default. If you're switching to this
+// platform on a site with significant inbound traffic to extant links (which is
+// not recommended), you may want to override this setting.
 
 function reset_permalinks() {
     global $wp_rewrite;
@@ -25,12 +25,12 @@ function reset_permalinks() {
 add_action( 'init', 'reset_permalinks' );
 
 ////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  2. Kills comments dead  ] <><><>=======================//
+//===========<><><> [  2. Disables comments  ] <><><>=========================//
 ////////////////////////////////////////////////////////////////////////////////
 
-//Good riddance. If you want comments, (and you shouldn't, they're bad and have
-//no place on a campaign site) then use something like Disqus, which is better
-//in every way.
+// Default WordPress comments have all sorts of problems.
+// If you want comments, then use something like Disqus, which is better
+// in every way.
 
 add_action( 'admin_menu', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {

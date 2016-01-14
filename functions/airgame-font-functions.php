@@ -1,40 +1,38 @@
 <?php
 
-$root = get_template_directory();
+//Header font, used for large, bold headlines.
+$hed = 'NowBold';
+
+//Subheadline (i.e. "dek") font, used for subheaders.
+$dek = 'NowRegular';
+
+//Copy font, used for large areas of text.
+$copy = 'Droid Serif';
 
 ?>
+<?php if ( !is_admin() ): ?>
 <style>
 
-  @font-face {
-    font-family: 'Now Bold';
-    src: local('Now Bold');
-    src: url('<?php echo $root ?>/fonts/now/now-bold-webfont.eot');
-      url('<?php echo $root ?>/fonts/now/now-bold-webfont.eot?iefix') format('eot'),
-      url('<?php echo $root ?>/fonts/now/now-bold-webfont.woff2') format('woff2'),
-      url('<?php echo $root ?>/fonts/now/now-bold-webfont.woff') format('woff'),
-      url('<?php echo $root ?>/fonts/now/now-bold-webfont.ttf') format('truetype'),
-      url('<?php echo $root ?>/fonts/now/now-bold-webfont.svg#webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-  .now-bold {
-    font-family: 'Now Bold', Helvetica, Arial, sans-serif;
-  }
+h1, h3, h5 {
+  font-family: <?php echo $hed ?>;
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Now Light';
-    src: local('Now Light');
-    src: url('<?php echo $root ?>/fonts/now/now-light-webfont.eot');
-      url('<?php echo $root ?>/fonts/now/now-light-webfont.eot?iefix') format('eot'),
-      url('<?php echo $root ?>/fonts/now/now-light-webfont.woff2') format('woff2'),
-      url('<?php echo $root ?>/fonts/now/now-light-webfont.woff') format('woff'),
-      url('<?php echo $root ?>/fonts/now/now-light-webfont.ttf') format('truetype'),
-      url('<?php echo $root ?>/fonts/now/now-light-webfont.svg#webfont') format('svg');
+h2, h4, h6, .menu li a {
+    font-family: <?php echo $dek ?>;
     font-weight: normal;
     font-style: normal;
-  }
-  .now-light {
-    font-family: 'Now Light', Helvetica, Arial, sans-serif;
-  }
+    text-transform: uppercase;
+}
+
+p {
+    font-family: <?php echo $copy ?>;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba(255,255,255,0.75);
+    line-height: 140%;
+}
 
 </style>
+<?php endif ?>

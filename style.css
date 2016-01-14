@@ -43,7 +43,7 @@ body {
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
     -webkit-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+    transition: background-color 0.15s;
     position: fixed;
     text-align: center;
 }
@@ -69,14 +69,14 @@ body {
     font-size: 85%;
     font-weight: 900;
     letter-spacing: 0.8px;
-    color: #F2E2DC;
+    color: rgba(255,255,255,0.6);
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
 .menu .current-menu-item a,
 .menu .current_page_item a,
 .menu a:hover {
-    color: #fff;
+    color: rgba(255,255,255,1);
 }
 
 /*
@@ -95,15 +95,18 @@ body {
 
 .airgame-disclaimer-container {
   text-transform: uppercase;
-  font-size: 95%;
-  color: #0A91AB;
-  letter-spacing: 1px;
-  max-width: 500px;
+  font-size: 75%;
+  color: rgba(45,154,156,0.6);
+  letter-spacing: 2px;
+  max-width: 700px;
   margin: 0 auto 20px auto;
   padding: 10px;
-  border: 1.5px solid #065471;
+  border: 1.5px solid rgba(45,154,156,0.6);
 }
 
-.airgame-copyright-container {
-  color: #065471;
+.airgame-copyright-container h2 {
+  font-size: 85%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
 }

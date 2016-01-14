@@ -22,8 +22,8 @@
         if(have_posts()):
           while(have_posts()):
             the_post(); ?>
-              <h2 class="now-bold"><?php the_title(); ?></h2>
-              <p class="now-light"><?php the_content(); ?></p>
+              <h1 class="bold"><?php the_title(); ?></h1>
+              <div class="light"><?php the_content(); ?></div>
             <?php endwhile;
           endif;
 
