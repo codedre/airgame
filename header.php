@@ -16,12 +16,6 @@ Visit http://airga.me to learn more.
         //Add the Site Identity campaign name
         bloginfo( 'name' );
 
-        //Add the Site Identity description on the front-page
-        $site_description = get_bloginfo( 'description', 'display' );
-
-        if ( $site_description && ( is_home() || is_front_page() ) ) {
-          echo " | $site_description";
-        }
       ?>
     </title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
