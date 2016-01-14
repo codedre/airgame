@@ -3,6 +3,14 @@
 
 (function($){
   $(document).ready(function(){
-    console.log("jq works!!");
+
+
+    // Menu background-color change on scroll
+    var $scrollingDiv = $(".menu");
+    $(window).scroll(function () {
+       $scrollingDiv.stop()
+       $scrollingDiv.css("background-color", (($(window).scrollTop() / $(document).height()) > 0.15) ? "#073A59" : "");
+     });
+
   })
 })(jQuery);

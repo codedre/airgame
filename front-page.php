@@ -9,7 +9,7 @@
 
 <!--===========<><><> [  Hero Box  ] <><><>=============-->
 <div class="airgame-body front-page-hero-box" <?php
-  echo "style=\"background-image: url('http://i.imgur.com/1IrEmPo.jpg')\"";
+  echo "style=\"background-image: url('http://i.imgur.com/f3z56h9.jpg')\"";
 ?>>
 <p>
 Bacon ipsum dolor amet jowl tongue flank pork chop tenderloin biltong ball tip landjaeger pig bresaola andouille tri-tip turducken pastrami short ribs. Cow pork loin picanha ham pork chop alcatra chicken ribeye meatball corned beef shank capicola turkey sausage. Pork loin ham hock pancetta, turkey corned beef andouille pig filet mignon leberkas ribeye boudin porchetta. Picanha t-bone alcatra tenderloin cupim turducken.

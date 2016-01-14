@@ -21,7 +21,7 @@
 */
 
 body {
-  background-color: #0C2233;
+  background-color: #073A59;
 }
 
 .airgame-body {
@@ -43,9 +43,10 @@ body {
     width: 100%;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
     position: fixed;
     text-align: center;
-    margin: 25px;
 }
 
 .menu ul {
@@ -69,9 +70,14 @@ body {
     font-size: 85%;
     font-weight: 900;
     letter-spacing: 0.8px;
+    color: #F2E2DC;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
 }
-.menu .current-menu-item a, .menu .current_page_item a, #main-nav a:hover {
-    color: #000;
+.menu .current-menu-item a,
+.menu .current_page_item a,
+.menu a:hover {
+    color: #fff;
 }
 
 /*
@@ -84,7 +90,7 @@ body {
 
 .airgame-footer {
   color: #065471;
-  background-color: #0C2233;
+  background-color: #073A59;
   padding: 40px;
 }
 
