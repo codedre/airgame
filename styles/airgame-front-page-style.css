@@ -9,7 +9,12 @@
 .front-page-hero-box {
   min-height: 500px;
   color: #fff;
-  padding: 300px 50px 100px 50px;
+  padding: 100px 50px 50px 50px;
   background-size: cover;
-  background-position: center;
+  background-position: 55% 35%;
+}
+
+.front-page-hero-box h1 {
+  font-size: 60px;
+  line-height: 55px;
 }

@@ -31,6 +31,12 @@ body {
 .airgame-container {
   margin: 0 auto;
   max-width: 1100px;
+  min-height: 300px;
+}
+
+.airgame-half-container {
+  left: 0;
+  max-width: 550px;
 }
 
 /*
@@ -83,7 +89,9 @@ body {
 *=====================[ Footer ]================================================
 */
 
-.airgame-footer, .airgame-disclaimer-container, .airgame-copyright-container {
+.airgame-footer,
+.airgame-disclaimer-container,
+.airgame-copyright-container {
   text-align: center;
 }
 

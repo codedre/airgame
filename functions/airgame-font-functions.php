@@ -24,6 +24,7 @@ h2, h4, h6, .menu li a {
     font-weight: normal;
     font-style: normal;
     text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 p {
@@ -32,6 +33,29 @@ p {
     font-style: normal;
     color: rgba(255,255,255,0.75);
     line-height: 140%;
+}
+
+.airgame-hed-box {
+  display: inline-block;
+}
+
+.airgame-dek-box {
+  display: inline-block;
+  background-color: #052B53;
+  padding: 10px 20px 7px 20px;
+}
+
+.airgame-hed-box,
+.airgame-dek-box {
+  margin-bottom: 20px;
+}
+
+.airgame-dek-box h2 {
+  color: #7997BD;
+}
+
+.airgame-hed-box h1 {
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 </style>
