@@ -13,7 +13,7 @@ $copy = 'Droid Serif';
 <?php if ( !is_admin() ): ?>
 <style>
 
-h1, h3, h5 {
+h1, h3, h5, button {
   font-family: <?php echo $hed ?>;
   font-weight: normal;
   font-style: normal;
@@ -27,7 +27,7 @@ h2, h4, h6, .menu li a {
     letter-spacing: 3px;
 }
 
-p {
+p, input {
     font-family: <?php echo $copy ?>;
     font-weight: normal;
     font-style: normal;

@@ -96,25 +96,25 @@ body {
 }
 
 .airgame-footer {
-  color: #065471;
-  background-color: #073A59;
+  color: #063669;
+  background-color: #032140;
   padding: 40px;
 }
 
 .airgame-disclaimer-container {
   text-transform: uppercase;
   font-size: 75%;
-  color: rgba(45,154,156,0.6);
+  color: #7D99BB;
   letter-spacing: 2px;
   max-width: 700px;
   margin: 0 auto 20px auto;
   padding: 10px;
-  border: 1.5px solid rgba(45,154,156,0.6);
+  border: 1.5px solid #7D99BB;
 }
 
 .airgame-copyright-container h2 {
   font-size: 85%;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: #063669;
 }

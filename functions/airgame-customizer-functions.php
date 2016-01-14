@@ -302,6 +302,54 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
+  //=============== [  2E. Front Page Headlines  ]
+
+  $wp_customize->add_section(
+    'front_page_headlines',
+    array(
+        'title'     => 'Front Page Headlines',
+        'priority'  => 600
+    )
+  );
+
+  //----------- [  2E1. Front Page Headlines > Headline  ]
+
+  $wp_customize->add_setting(
+    'airgame_front_page_headline',
+    array(
+      'default'            => 'Common sense solutions for our community',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_front_page_headline',
+    array(
+      'section'  => 'front_page_headlines',
+      'label'    => 'Front Page Headline',
+      'type'     => 'text'
+    )
+  );
+
+  //----------- [  2E2. Front Page Headlines > Subheadline  ]
+
+  $wp_customize->add_setting(
+    'airgame_front_page_subheadline',
+    array(
+      'default'            => 'Join our movement now',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_front_page_subheadline',
+    array(
+      'section'  => 'front_page_headlines',
+      'label'    => 'Front Page Subheadline',
+      'type'     => 'text'
+    )
+  );
+
 }
 add_action( 'customize_register', 'register_theme_customizer' );
 
