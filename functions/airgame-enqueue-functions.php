@@ -1,5 +1,8 @@
 <?php
 
+// This file enqueues (loads) CSS style files and JavaScript script files.
+// Load new files here, with the add_scripts function, rather than in HTML.
+
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  Style & script enqueue  ] <><><>=======================//
 ////////////////////////////////////////////////////////////////////////////////

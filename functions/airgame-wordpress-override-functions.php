@@ -1,7 +1,6 @@
 <?php
 
-// This file contains all customization of the Customizer screen
-// (Appearance > Customize).
+// This file contains overrides of WordPress routing and backend options.
 
 //--------------------------Table of Contents---------------------------------//
 
