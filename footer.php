@@ -5,7 +5,7 @@
     ?>>
     <div class="airgame-container footer-signup">
       <div class="airgame-hed-box footer-signup">
-        <h1 class="footer-signup">Join the campaign now</h1>
+        <h1 class="footer-signup"><?php echo get_theme_mod( 'airgame_footer_email_signup_headline' ); ?></h1>
       </div>
       <form class="front-page-hero-email-signup">
         <input class="email-signup-email" placeholder="Email address" type="text"/ >

@@ -23,6 +23,10 @@
 //==== [  2F. Social Media Links Section  ]
 //-- [  2F1. Social Media Links > Facebook Page URL  ]
 //-- [  2F2. Social Media Links > Twitter Profile URL  ]
+//==== [  2E. Headlines  ]
+//-- [  2E1. Headlines > Front Page Headline  ]
+//-- [  2E2. Headlines > Front Page Subheadline  ]
+//-- [  2E3. Headlines > Footer Email Signup Headline  ]
 //==== [  2G. CSS to be modified via Customizer  ]
 //==== [  2H. Text input sanitizer function  ]
 
@@ -302,17 +306,17 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //=============== [  2E. Front Page Headlines  ]
+  //=============== [  2E. Headlines  ]
 
   $wp_customize->add_section(
-    'front_page_headlines',
+    'headlines',
     array(
-        'title'     => 'Front Page Headlines',
+        'title'     => 'Headlines',
         'priority'  => 600
     )
   );
 
-  //----------- [  2E1. Front Page Headlines > Headline  ]
+  //----------- [  2E1. Headlines > Front Page Headline  ]
 
   $wp_customize->add_setting(
     'airgame_front_page_headline',
@@ -325,13 +329,13 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_control(
     'airgame_front_page_headline',
     array(
-      'section'  => 'front_page_headlines',
+      'section'  => 'headlines',
       'label'    => 'Front Page Headline',
       'type'     => 'text'
     )
   );
 
-  //----------- [  2E2. Front Page Headlines > Subheadline  ]
+  //----------- [  2E2. Headlines > Front Page Subheadline  ]
 
   $wp_customize->add_setting(
     'airgame_front_page_subheadline',
@@ -344,8 +348,27 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_control(
     'airgame_front_page_subheadline',
     array(
-      'section'  => 'front_page_headlines',
+      'section'  => 'headlines',
       'label'    => 'Front Page Subheadline',
+      'type'     => 'text'
+    )
+  );
+
+  //----------- [  2E3. Headlines > Footer Email Signup Headline  ]
+
+  $wp_customize->add_setting(
+    'airgame_footer_email_signup_headline',
+    array(
+      'default'            => 'Join the campaign now',
+      'sanitize_callback'  => 'airgame_sanitize',
+      'transport'          => 'postMessage'
+    )
+  );
+  $wp_customize->add_control(
+    'airgame_footer_email_signup_headline',
+    array(
+      'section'  => 'headlines',
+      'label'    => 'Footer Email Signup Headline',
       'type'     => 'text'
     )
   );
