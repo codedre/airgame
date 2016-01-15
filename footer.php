@@ -1,19 +1,21 @@
   <?php wp_footer(); ?>
 
-  <div class="airgame-footer-email-signup" <?php
-      echo "style=\"background-image: url('http://i.imgur.com/Bx5mrnT.jpg')\"";
-    ?>>
-    <div class="airgame-container footer-signup">
-      <div class="airgame-hed-box footer-signup">
-        <h1 class="footer-signup"><?php echo get_theme_mod( 'airgame_footer_email_signup_headline' ); ?></h1>
+  <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
+    <div class="airgame-footer-email-signup" <?php
+        echo "style=\"background-image: url('http://i.imgur.com/Bx5mrnT.jpg')\"";
+      ?>>
+      <div class="airgame-container footer-signup">
+        <div class="airgame-hed-box footer-signup">
+          <h1 class="footer-signup"><?php echo get_theme_mod( 'airgame_footer_email_signup_headline' ); ?></h1>
+        </div>
+        <form class="front-page-hero-email-signup">
+          <input class="email-signup-email" placeholder="Email address" type="text"/ >
+          <input class="email-signup-zip" placeholder="ZIP code" type="text"/ >
+          <button>I'm in!</button>
+        </form>
       </div>
-      <form class="front-page-hero-email-signup">
-        <input class="email-signup-email" placeholder="Email address" type="text"/ >
-        <input class="email-signup-zip" placeholder="ZIP code" type="text"/ >
-        <button>I'm in!</button>
-      </form>
     </div>
-  </div>
+  <?php endif; ?>
 
   <div class="airgame-footer">
     <img class="airgame-footer-logo" src="http://i.imgur.com/TIC2DD3.png" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
