@@ -28,12 +28,14 @@ Visit http://airga.me to learn more.
       }
     ?>
     <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
-      <div class="menu-actions-container">
-        <div class="menu-actions">
-          <img src="http://i.imgur.com/23Jp7Dz.png" class="airgame-logo" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
-          <div class="airgame-top-donate">
-            <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
+          <div class="menu-actions">
+            <a href="<?php echo get_home_url(); ?>">
+              <img src="http://i.imgur.com/23Jp7Dz.png" class="airgame-logo" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+            </a>
+            <a href="<?php echo get_home_url(); ?>/forms/contribute">
+              <div class="airgame-top-donate">
+                <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
+              </div>
+            </a>
           </div>
-        </div>
-      </div>
     <?php endif; ?>

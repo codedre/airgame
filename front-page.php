@@ -14,10 +14,14 @@
   <div class="airgame-container">
     <div class="airgame-half-container">
       <div class="airgame-hed-box">
-        <h1 class="airgame_front_page_headline"><?php echo get_theme_mod( 'airgame_front_page_headline' ); ?></h1>
+        <h1 class="airgame_front_page_headline">
+          <?php echo get_theme_mod( 'airgame_front_page_headline' ); ?>
+        </h1>
       </div>
       <div class="airgame-dek-box">
-        <h2 class="airgame_front_page_subheadline"><?php echo get_theme_mod( 'airgame_front_page_subheadline' ); ?></h2>
+        <h2 class="airgame_front_page_subheadline">
+          <?php echo get_theme_mod( 'airgame_front_page_subheadline' ); ?>
+        </h2>
       </div>
       <form class="front-page-hero-email-signup">
         <input class="email-signup-email" placeholder="Email address" type="text"/ >
