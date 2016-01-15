@@ -23,11 +23,6 @@ body {
   background-color: #073A59;
 }
 
-.airgame-body {
-   width: 100%;
-   width: 100vw;
-}
-
 .airgame-container {
   margin: 0 auto;
   max-width: 1100px;
@@ -86,35 +81,92 @@ body {
 }
 
 /*
+*=====================[  Email  ]===============================================
+*/
+
+.front-page-hero-email-signup input,
+.front-page-hero-email-signup button {
+  border: 2px solid #4B6C94;
+  padding: 10px;
+  font-size: 120%;
+}
+
+.front-page-hero-email-signup input.email-signup-email {
+  width: 50%;
+  left: 0;
+  color: #4B6C94;
+}
+
+.front-page-hero-email-signup input.email-signup-zip {
+  width: 25%;
+  left: 0;
+  color: #4B6C94;
+}
+
+.front-page-hero-email-signup button {
+  width: 20%;
+  right: 0;
+  background-color: #052B53;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+h1.footer-signup {
+  font-size: 400%;
+  margin-bottom: 30px;
+}
+
+div.footer-signup {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.airgame-footer-email-signup {
+  min-height: 500px;
+  color: #fff;
+  padding: 200px 50px 50px 50px;
+  background-size: cover;
+  background-position: 55% 35%;
+}
+
+.
+
+/*
 *=====================[ Footer ]================================================
 */
 
-.airgame-footer,
-.airgame-disclaimer-container,
-.airgame-copyright-container {
+.airgame-footer, .airgame-disclaimer-container, .airgame-copyright-container {
   text-align: center;
 }
 
 .airgame-footer {
   color: #063669;
   background-color: #032140;
-  padding: 40px;
+  padding: 60px 0 120px 0;
 }
 
 .airgame-disclaimer-container {
+  text-align: center;
   text-transform: uppercase;
   font-size: 75%;
   color: #7D99BB;
   letter-spacing: 2px;
   max-width: 700px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 40px auto;
   padding: 10px;
   border: 1.5px solid #7D99BB;
 }
 
+.airgame-disclaimer-container h2 {
+  margin: 0 auto;
+}
+
 .airgame-copyright-container h2 {
+  text-align: center;
   font-size: 85%;
   letter-spacing: 1.5px;
+  margin: 0 auto;
+  max-width: 500px;
   text-transform: uppercase;
   color: #063669;
 }

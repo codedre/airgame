@@ -20,11 +20,14 @@
         <h2 class="airgame_front_page_subheadline"><?php echo get_theme_mod( 'airgame_front_page_subheadline' ); ?></h2>
       </div>
       <form class="front-page-hero-email-signup">
-        <input placeholder="Email address" type="text"/ ><button>I'm in!</button>
+        <input class="email-signup-email" placeholder="Email address" type="text"/ >
+        <input class="email-signup-zip" placeholder="ZIP code" type="text"/ >
+        <button>I'm in!</button>
       </form>
     </div>
   </div>
 </div>
+
 <div class="airgame-container">
 </div>
 

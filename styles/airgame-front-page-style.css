@@ -23,33 +23,3 @@
 .airgame-hed-box {
   display: inline;
 }
-
-/*.front-page-hero-email-signup {
-  display: inline;
-  text-align: center;
-  background-color: #7997BD;
-  padding: 5px 0;
-  border-radius: 2px;
-}*/
-
-.front-page-hero-email-signup input,
-.front-page-hero-email-signup button {
-  border: 2px solid #4B6C94;
-  padding: 10px;
-  font-size: 120%;
-}
-
-.front-page-hero-email-signup input {
-  width: 75%;
-  left: 0;
-  margin-right: 10px;
-  color: #4B6C94;
-}
-
-.front-page-hero-email-signup button {
-  width: 20%;
-  right: 0;
-  background-color: #052B53;
-  color: #fff;
-  text-transform: uppercase;
-}
