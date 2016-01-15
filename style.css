@@ -105,6 +105,7 @@ body {
 }
 
 .menu-actions .airgame-top-donate {
+  text-align: center;
   float: right;
   clear: right;
   width: 200px;
@@ -117,6 +118,13 @@ body {
 
 .menu-actions .airgame-top-donate:hover {
   background-color: #E83637;
+}
+
+.airgame-top-donate h3 {
+  text-transform: uppercase;
+  z-index: 9999;
+  letter-spacing: 2.5px;
+  line-height: 50px;
 }
 
 /*
@@ -237,11 +245,12 @@ div.footer-signup {
 }
 
 .airgame-content-container {
-  max-width: 1100px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 .airgame-content-container * {
   color: #1c1c1c;
-  line-height: 36px;
+  line-height: 45px;
+  font-weight: 500;
 }

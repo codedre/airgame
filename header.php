@@ -34,7 +34,9 @@ Visit http://airga.me to learn more.
             </a>
             <a href="<?php echo get_home_url(); ?>/forms/contribute">
               <div class="airgame-top-donate">
-                <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
+                <h3>
+                  <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
+                </h3>
               </div>
             </a>
           </div>
