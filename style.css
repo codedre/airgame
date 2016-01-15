@@ -215,3 +215,33 @@ div.footer-signup {
   text-transform: uppercase;
   color: #063669;
 }
+
+/*
+*=====================[  Content  ]=============================================
+*/
+
+.airgame-post-header-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.airgame-post-header-container {
+}
+
+.airgame-content-wrapper {
+  background-color: #fff;
+  width: 100%;
+  width: 100vw;
+  padding: 60px 25px;
+}
+
+.airgame-content-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.airgame-content-container * {
+  color: #1c1c1c;
+  line-height: 36px;
+}
