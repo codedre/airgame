@@ -27,3 +27,11 @@ Visit http://airga.me to learn more.
         wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) );
       }
     ?>
+    <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
+      <div class="menu-actions">
+        <img src="http://i.imgur.com/23Jp7Dz.png" class="airgame-logo" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+        <div class="airgame-top-donate">
+          <?php echo get_theme_mod( 'airgame_contribute button text' ); ?>
+        </div>
+      </div>
+    <?php endif; ?>

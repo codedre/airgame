@@ -81,6 +81,36 @@ body {
 }
 
 /*
+*=====================[  Menu Logo / Buttons  ]=================================
+*/
+
+.menu-actions {
+  position: fixed;
+  top: 0;
+  max-width: 1100px;
+  z-index: 999;
+}
+
+.menu-actions .airgame-logo {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 215px;
+}
+
+.menu-actions .airgame-top-donate {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 75px;
+  background-color: #D23F47;
+  color: #fff;
+}
+
+/*
 *=====================[  Email  ]===============================================
 */
 
@@ -140,9 +170,15 @@ div.footer-signup {
 }
 
 .airgame-footer {
+  text-align: center;
   color: #063669;
   background-color: #032140;
-  padding: 60px 0 120px 0;
+  padding: 30px 0 120px 0;
+}
+
+.airgame-footer-logo {
+  opacity: 0.15;
+  margin-bottom: 30px;
 }
 
 .airgame-disclaimer-container {
