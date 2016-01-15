@@ -17,14 +17,20 @@
 .front-page-hero-box h1 {
   font-size: 60px;
   line-height: 55px;
+  letter-spacing: -1px;
 }
 
-.front-page-hero-email-signup {
+.airgame-hed-box {
+  display: inline;
+}
+
+/*.front-page-hero-email-signup {
+  display: inline;
   text-align: center;
   background-color: #7997BD;
   padding: 5px 0;
   border-radius: 2px;
-}
+}*/
 
 .front-page-hero-email-signup input,
 .front-page-hero-email-signup button {
