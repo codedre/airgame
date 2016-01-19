@@ -22,6 +22,19 @@ function add_scripts(){
     );
     wp_enqueue_style( 'airgame-base-style' );
 
+    // Calls dynamic base theme styles
+    // wp_enqueue_style('dynamic-css',
+    //          admin_url('admin-ajax.php').'?action=dynamic_css',
+    //          $deps,
+    //          $ver,
+    //          $media);
+    // function dynamic_css() {
+    //   require( get_template_directory_uri() . '/styles/airgame-base-style.css.php' );
+    //   exit;
+    // }
+    // add_action('wp_ajax_dynamic_css', 'dynamic_css');
+    // add_action('wp_ajax_nopriv_dynamic_css', 'dynamic_css');
+
     // Calls base script
     wp_enqueue_script(
       "airgame-app", // Script short handle

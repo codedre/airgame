@@ -19,7 +19,8 @@ require_once( get_template_directory() . '/functions/airgame-custom-post-types-f
 //Menu initialization
 require_once( get_template_directory() . '/functions/airgame-menu-functions.php' );
 
-//IMPORTANT NOTE: Functions that interfere with HTTP headers must be called after wp_head.
-//These have been abstracted out to /functions/airgame-after-headers-functions.php.
+// IMPORTANT NOTE: Functions that interfere with HTTP headers must be called after wp_head.
+// These have been abstracted out to /functions/airgame-after-headers-functions.php and are
+// called one line after wp_head in header.php.
 
 ?>
