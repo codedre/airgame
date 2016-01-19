@@ -16,6 +16,13 @@ function add_scripts(){
     wp_enqueue_style(
       'style', get_stylesheet_uri() );
 
+    // Calls base theme styles. Do not touch! Theme will break!
+    wp_register_style(
+      'airgame-base-style', // Stylesheet short handle
+      get_template_directory_uri() . '/styles/airgame-base-style.css' // Path
+    );
+    wp_enqueue_style( 'airgame-base-style' );
+
     // Calls base script, app.js
     wp_enqueue_script(
       "airgame-app", // Script short handle
