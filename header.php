@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-
-This site is powered by Airgame.
-
-Visit http://airga.me to learn more.
-
--->
 <html>
   <head>
     <title>
@@ -23,6 +16,8 @@ Visit http://airga.me to learn more.
     <?php require_once( get_template_directory() . '/functions/airgame-after-headers-functions.php' ); ?>
   </head>
   <body>
+    <!--===========<><><> [  Menu  ] <><><>=============-->
+    <div id="header">
     <?php
       if ( get_post_type() !== 'ngp-form-pages' ) {
         wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) );
@@ -42,3 +37,4 @@ Visit http://airga.me to learn more.
             </a>
           </div>
     <?php endif; ?>
+    </div>

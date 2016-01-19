@@ -1,8 +1,4 @@
-
-<!--===========<><><> [  Menu  ] <><><>=============-->
-<div id="header">
-  <?php get_header(); ?>
-</div>
+<?php get_header(); ?>
 
 <div class="airgame-post-header-container">
   <div class="airgame-post-header-image" style="background-image: url('http://i.imgur.com/z1RFv6j.jpg');";>
