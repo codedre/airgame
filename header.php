@@ -20,6 +20,7 @@ Visit http://airga.me to learn more.
     </title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <?php wp_head(); ?>
+    <?php require_once( get_template_directory() . '/functions/airgame-after-headers-functions.php' ); ?>
   </head>
   <body>
     <?php
