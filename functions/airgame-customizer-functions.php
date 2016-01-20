@@ -34,8 +34,8 @@
 //===========<><><> [  1. Customizer async updating  ] <><><>=================//
 ////////////////////////////////////////////////////////////////////////////////
 
-//Calls to theme-customizer.js, which allows realtime asynchronous updating of
-//changes made in the Customizer so users can watch them being applied.
+// Calls to theme-customizer.js, which allows realtime asynchronous updating of
+// changes made in the Customizer so users can watch them being applied.
 
 function customizer_live_preview() {
 
@@ -54,9 +54,10 @@ add_action( 'customize_preview_init', 'customizer_live_preview' );
 //===========<><><> [  2. Customizer custom options  ] <><><>=================//
 ////////////////////////////////////////////////////////////////////////////////
 
-//To ensure forward-compatibility with Calypso, Airgame's options are located
-//either on the Customizer screen (Appearance > Customize) or on individual
-//post / page / custom post type pages.
+// To ensure forward-compatibility with Calypso, Airgame's options are located
+// either on the Customizer screen (Appearance > Customize) or on individual
+// post / page / custom post type pages. Airgame has no discrete backend
+// options page.
 
 function register_theme_customizer( $wp_customize ) {
 
@@ -379,6 +380,9 @@ add_action( 'customize_register', 'register_theme_customizer' );
 
 //=============== [  2G. CSS to be modified via Customizer  ]
 
+// This has no function yet, but allows for custom CSS to be directly applied
+// via the Customizer.
+
 function customizer_css() {
     ?>
     <style type="text/css">
@@ -390,8 +394,9 @@ add_action( 'wp_head', 'customizer_css' );
 
 //=============== [  2H. Text input sanitizer function  ]
 
-//This function prevents the user from inadvertantly running commands against
-//their own MySQL database when inputting text in Customizer text fields.
+// This function prevents the user from inadvertantly (or intentionally) running
+// SQL injection commands against their own MySQL database when inputting text
+// in Customizer text fields.
 
 function airgame_sanitize( $input ) {
 	return strip_tags( stripslashes( $input ) );
