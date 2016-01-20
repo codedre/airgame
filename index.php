@@ -5,14 +5,12 @@
   </div>
 </div>
 
-<!--===========<><><> [  The WP Loop  ] <><><>=============-->
-
+<!-- the WP Loop -->
 <div class="airgame-content-wrapper">
   <div class="airgame-content-container">
     <?php get_template_part("loop"); ?>
   </div>
 </div>
 
-<!--===========<><><> [  Footer  ] <><><>=============-->
-
+<!-- Footer -->
 <?php get_footer(); ?>

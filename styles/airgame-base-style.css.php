@@ -1,3 +1,11 @@
+<?php
+
+// header("Content-type: text/css; charset: UTF-8");
+
+$color = '#073A59';
+
+?>
+
 /*
 *=====================[ Reset ]=================================================
 */
@@ -13,7 +21,7 @@
 */
 
 body {
-  background-color: #073A59;
+  background-color: <?php echo $color; ?>;
 }
 
 .airgame-container {
