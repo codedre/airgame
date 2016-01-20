@@ -22,6 +22,9 @@
       if ( get_post_type() !== 'ngp-form-pages' ) {
         wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) );
       }
+      else {
+        echo '<!-- No menu output on form pages -->';
+      }
     ?>
     <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
           <div class="menu-actions">

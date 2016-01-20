@@ -20,9 +20,15 @@
 //-- [  2E2. Contribute & Volunteer Buttons > Form Linked to Contribute Button Setting & Control ]
 //-- [  2E3. Contribute & Volunteer Buttons > Volunteer Button Text Setting & Control ]
 //-- [  2E4. Contribute & Volunteer Buttons > Form Linked to Volunteer Button Setting & Control ]
-//==== [  2F. Social Media Links Section  ]
-//-- [  2F1. Social Media Links > Facebook Page URL  ]
-//-- [  2F2. Social Media Links > Twitter Profile URL  ]
+//==== [  2F. Social Media Section  ]
+//-- [  2F1. Social Media > Facebook Page URL  ]
+//-- [  2F2. Social Media > Facebook App ID  ]
+//-- [  2F3. Social Media > Facebook App Secret  ]
+//-- [  2F4. Social Media > Twitter Profile URL  ]
+//-- [  2F5. Social Media > Twitter Consumer Key  ]
+//-- [  2F6. Social Media > Twitter Consumer Secret  ]
+//-- [  2F7. Social Media > Twitter Access Token  ]
+//-- [  2F8. Social Media > Twitter Access Token Secret  ]
 //==== [  2E. Headlines  ]
 //-- [  2E1. Headlines > Front Page Headline  ]
 //-- [  2E2. Headlines > Front Page Subheadline  ]
@@ -259,22 +265,22 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //=============== [  2F. Social Media Links Section  ]
+  //=============== [  2F. Social Media Section  ]
 
   $wp_customize->add_section(
     'social_media',
     array(
-        'title'     => 'Social Media Links',
+        'title'     => 'Social Media',
         'priority'  => 500
     )
   );
 
-  //----------- [  2F1. Social Media Links > Facebook Page URL  ]
+  //----------- [  2F1. Social Media > Facebook Page URL  ]
 
   $wp_customize->add_setting(
 		'airgame_facebook_page_url',
 		array(
-			'default'            => 'http://facebook.com/...',
+			'default'            => '',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
@@ -288,12 +294,50 @@ function register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-  //----------- [  2F2. Social Media Links > Twitter Profile URL  ]
+  //----------- [  2F2. Social Media > Facebook App ID  ]
+
+  $wp_customize->add_setting(
+		'airgame_facebook_app_id',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_facebook_app_id',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Facebook App ID',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  2F3. Social Media > Facebook App Secret  ]
+
+  $wp_customize->add_setting(
+		'airgame_facebook_app_secret',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_facebook_app_secret',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Facebook App Secret',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  2F4. Social Media > Twitter Profile URL  ]
 
   $wp_customize->add_setting(
     'airgame_twitter_profile_url',
     array(
-      'default'            => 'http://twitter.com/...',
+      'default'            => '',
       'sanitize_callback'  => 'airgame_sanitize',
       'transport'          => 'postMessage'
     )
@@ -306,6 +350,82 @@ function register_theme_customizer( $wp_customize ) {
       'type'     => 'text'
     )
   );
+
+  //----------- [  2F5. Social Media > Twitter Consumer Key  ]
+
+  $wp_customize->add_setting(
+		'airgame_twitter_consumer_key',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_twitter_consumer_key',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Twitter Consumer Key',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  2F6. Social Media > Twitter Consumer Secret ]
+
+  $wp_customize->add_setting(
+		'airgame_twitter_consumer_secret',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_twitter_consumer_secret',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Twitter Consumer Secret',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  2F7. Social Media > Twitter Access Token  ]
+
+  $wp_customize->add_setting(
+		'airgame_twitter_access_token',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_twitter_access_token',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Twitter Access Token',
+			'type'     => 'text'
+		)
+	);
+
+  //----------- [  2F8. Social Media > Twitter Access Token Secret  ]
+
+  $wp_customize->add_setting(
+		'airgame_twitter_access_token_secret',
+		array(
+			'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'airgame_twitter_access_token_secret',
+		array(
+			'section'  => 'social_media',
+			'label'    => 'Twitter Access Token Secret',
+			'type'     => 'text'
+		)
+	);
 
   //=============== [  2E. Headlines  ]
 
