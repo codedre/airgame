@@ -29,12 +29,17 @@
 //-- [  2F6. Social Media > Twitter Consumer Secret  ]
 //-- [  2F7. Social Media > Twitter Access Token  ]
 //-- [  2F8. Social Media > Twitter Access Token Secret  ]
-//==== [  2E. Headlines  ]
-//-- [  2E1. Headlines > Front Page Headline  ]
-//-- [  2E2. Headlines > Front Page Subheadline  ]
-//-- [  2E3. Headlines > Footer Email Signup Headline  ]
-//==== [  2G. CSS to be modified via Customizer  ]
-//==== [  2H. Text input sanitizer function  ]
+//==== [  2G. Headlines  ]
+//-- [  2G1. Headlines > Front Page Headline  ]
+//-- [  2G2. Headlines > Front Page Subheadline  ]
+//-- [  2G3. Headlines > Footer Email Signup Headline  ]
+//==== [  2H. Images  ]
+//-- [  2H1. Images > Primary Logo  ]
+//-- [  2H2. Images > Alternate Logo  ]
+//-- [  2H3. Images > Front Page Top Section Background Image  ]
+//-- [  2H4. Images > Footer Email Signup Background Image  ]
+//==== [  2I. CSS to be modified via Customizer  ]
+//==== [  2J. Text input sanitizer function  ]
 
 ////////////////////////////////////////////////////////////////////////////////
 //===========<><><> [  1. Customizer async updating  ] <><><>=================//
@@ -429,7 +434,7 @@ function register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-  //=============== [  2E. Headlines  ]
+  //=============== [  2G. Headlines  ]
 
   $wp_customize->add_section(
     'headlines',
@@ -439,7 +444,7 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //----------- [  2E1. Headlines > Front Page Headline  ]
+  //----------- [  2G1. Headlines > Front Page Headline  ]
 
   $wp_customize->add_setting(
     'airgame_front_page_headline',
@@ -458,7 +463,7 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //----------- [  2E2. Headlines > Front Page Subheadline  ]
+  //----------- [  2G2. Headlines > Front Page Subheadline  ]
 
   $wp_customize->add_setting(
     'airgame_front_page_subheadline',
@@ -477,7 +482,7 @@ function register_theme_customizer( $wp_customize ) {
     )
   );
 
-  //----------- [  2E3. Headlines > Footer Email Signup Headline  ]
+  //----------- [  2G3. Headlines > Footer Email Signup Headline  ]
 
   $wp_customize->add_setting(
     'airgame_footer_email_signup_headline',
@@ -499,8 +504,11 @@ function register_theme_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'register_theme_customizer' );
 
+//=============== [  2H. Images  ]
 
-//=============== [  2G. CSS to be modified via Customizer  ]
+
+
+//=============== [  2I. CSS to be modified via Customizer  ]
 
 // This has no function yet, but allows for custom CSS to be directly applied
 // via the Customizer.
@@ -514,7 +522,7 @@ function customizer_css() {
 }
 add_action( 'wp_head', 'customizer_css' );
 
-//=============== [  2H. Text input sanitizer function  ]
+//=============== [  2J. Text input sanitizer function  ]
 
 // This function prevents the user from inadvertently (or intentionally) running
 // SQL injection commands against their own MySQL database when inputting text
