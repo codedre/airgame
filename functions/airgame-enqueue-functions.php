@@ -15,26 +15,6 @@ function add_scripts(){
     // Critical theme settings stylesheet. Do not remove or theme will break!
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-    // Calls base theme styles
-    // wp_register_style(
-    //   'airgame-base-style', // Stylesheet short handle
-    //   get_template_directory_uri() . '/styles/airgame-base-style.css' // Path
-    // );
-    // wp_enqueue_style( 'airgame-base-style' );
-
-    // Calls dynamic base theme styles
-    wp_enqueue_style('airgame_base_style',
-             admin_url('admin-ajax.php').'?action=airgame_base_style',
-             $deps,
-             $ver,
-             $media);
-    function base_style() {
-      require( get_template_directory_uri() . '/styles/airgame-base-style.css.php' );
-      exit;
-    }
-    add_action('wp_ajax_airgame_base_style', 'base_style');
-    add_action('wp_ajax_nopriv_airgame_base_style', 'base_style');
-
     // Calls base script
     wp_enqueue_script(
       "airgame-app", // Script short handle
