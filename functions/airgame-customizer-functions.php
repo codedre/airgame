@@ -98,7 +98,7 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
 		'airgame_disclaimer',
 		array(
-			'default'            => 'Paid for by...',
+      'default'            => '',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
@@ -117,9 +117,9 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_copyright',
     array(
-      'default'            => 'Copyright 2016...',
-      'sanitize_callback'  => 'airgame_sanitize',
-      'transport'          => 'postMessage'
+      'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
     )
   );
   $wp_customize->add_control(
@@ -146,9 +146,9 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_email_signup_button_call_to_action',
     array(
-      'default'            => 'Join the Campaign',
-      'sanitize_callback'  => 'airgame_sanitize',
-      'transport'          => 'postMessage'
+      'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
     )
   );
   $wp_customize->add_control(
@@ -165,9 +165,9 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_email_signup_button_text',
     array(
-      'default'            => 'I\'m In!',
-      'sanitize_callback'  => 'airgame_sanitize',
-      'transport'          => 'postMessage'
+      'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
     )
   );
   $wp_customize->add_control(
@@ -194,7 +194,7 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
 		'airgame_contribute_button_text',
 		array(
-			'default'            => 'Contribute',
+      'default'            => '',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
@@ -213,8 +213,9 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_contribute_button_form' . $count,
     array(
-      'default'           => '',
-      'sanitize_callback' => 'absint'
+      'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
     )
   );
 
@@ -232,7 +233,7 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
 		'airgame_volunteer_button_text',
 		array(
-			'default'            => 'Volunteer',
+      'default'            => '',
 			'sanitize_callback'  => 'airgame_sanitize',
 			'transport'          => 'postMessage'
 		)
@@ -251,8 +252,9 @@ function register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
     'airgame_volunteer_button_form',
     array(
-      'default'           => '',
-      'sanitize_callback' => 'absint'
+      'default'            => '',
+			'sanitize_callback'  => 'airgame_sanitize',
+			'transport'          => 'postMessage'
     )
   );
 
