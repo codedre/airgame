@@ -516,7 +516,7 @@ add_action( 'wp_head', 'customizer_css' );
 
 //=============== [  2H. Text input sanitizer function  ]
 
-// This function prevents the user from inadvertantly (or intentionally) running
+// This function prevents the user from inadvertently (or intentionally) running
 // SQL injection commands against their own MySQL database when inputting text
 // in Customizer text fields.
 
