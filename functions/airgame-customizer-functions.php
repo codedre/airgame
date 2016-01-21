@@ -70,7 +70,11 @@ add_action( 'customize_preview_init', 'customizer_live_preview' );
 // post / page / custom post type pages. Airgame has no discrete backend
 // options page.
 
-function register_theme_customizer( $wp_customize ) {
+function airgame_customize_register( $wp_customize ) {
+
+  if ( ! isset( $wp_customize ) ) {
+		return;
+	}
 
   //=============== [  2A. Removes Static Front Page  ]
 
@@ -484,28 +488,77 @@ function register_theme_customizer( $wp_customize ) {
 
   //----------- [  2G3. Headlines > Footer Email Signup Headline  ]
 
-  $wp_customize->add_setting(
-    'airgame_footer_email_signup_headline',
+    $wp_customize->add_setting(
+      'airgame_footer_email_signup_headline',
+      array(
+        'default'            => 'Join the campaign now',
+        'sanitize_callback'  => 'airgame_sanitize',
+        'transport'          => 'postMessage'
+      )
+    );
+    $wp_customize->add_control(
+      'airgame_footer_email_signup_headline',
+      array(
+        'section'  => 'headlines',
+        'label'    => 'Footer Email Signup Headline',
+        'type'     => 'text'
+      )
+    );
+
+  //=============== [  2H. Images  ]
+
+  $wp_customize->add_section(
+    'images',
     array(
-      'default'            => 'Join the campaign now',
-      'sanitize_callback'  => 'airgame_sanitize',
-      'transport'          => 'postMessage'
+        'title'     => 'Images',
+        'priority'  => 700
+    )
+  );
+
+  //----------- [  2H1. Images > Primary Logo  ]
+
+  $wp_customize->add_setting(
+    'airgame_primary_logo',
+    array(
+      'type' => 'option'
     )
   );
   $wp_customize->add_control(
-    'airgame_footer_email_signup_headline',
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'airgame_primary_logo',
+			array(
+				'section'		=> 'images',
+				'label'			=> 'Primary Logo',
+				'description'	=> 'Select the image to be used for the primary top logo.'
+			)
+		)
+	);
+
+  //----------- [  2H2. Images > Alternate Logo  ]
+
+  $wp_customize->add_setting(
+    'airgame_alternate_logo',
     array(
-      'section'  => 'headlines',
-      'label'    => 'Footer Email Signup Headline',
-      'type'     => 'text'
+      'type' => 'option'
     )
   );
+  $wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'airgame_alternate_logo',
+			array(
+				'section'		=> 'images',
+				'label'			=> 'Alternate Logo',
+				'description'	=> 'Select the image to be used for the alternate top logo.'
+			)
+		)
+	);
 
+
+  //**** ------- END CUSTOMIZE OPTIONS ------- ****
 }
-add_action( 'customize_register', 'register_theme_customizer' );
-
-//=============== [  2H. Images  ]
-
+add_action( 'customize_register', 'airgame_customize_register' );
 
 
 //=============== [  2I. CSS to be modified via Customizer  ]
@@ -514,11 +567,11 @@ add_action( 'customize_register', 'register_theme_customizer' );
 // via the Customizer.
 
 function customizer_css() {
-    ?>
-    <style type="text/css">
+  ?>
+  <style type="text/css">
 
-    </style>
-    <?php
+  </style>
+  <?php
 }
 add_action( 'wp_head', 'customizer_css' );
 
