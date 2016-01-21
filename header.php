@@ -29,7 +29,7 @@
     <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
           <div class="menu-actions">
             <a href="<?php echo get_home_url(); ?>">
-              <img src="http://i.imgur.com/23Jp7Dz.png" class="airgame-logo" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+              <img src="<?php echo get_theme_mod( 'airgame_primary_logo' ); ?>" class="airgame-logo" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
             </a>
 
             <a href="<?php echo get_home_url(); ?>/forms/contribute">

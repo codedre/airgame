@@ -19,7 +19,7 @@
 
   <div class="airgame-footer">
     <a href="<?php echo get_home_url(); ?>">
-      <img class="airgame-footer-logo" src="http://i.imgur.com/TIC2DD3.png" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+      <img class="airgame-footer-logo" src="<?php echo get_theme_mod( 'airgame_alternate_logo' ); ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
     </a>
     <div class="airgame-disclaimer-container">
       <h2 class="airgame-disclaimer"><?php echo get_theme_mod( 'airgame_disclaimer' ); ?></h2>
