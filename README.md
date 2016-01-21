@@ -1,6 +1,6 @@
 # ![airgame logo](http://i.imgur.com/fbtINQe.jpg)
 
-Airgame is a free, open source, super simple website platform for political campaigns. It installs like any other WordPress theme, but comes preloaded with tons of powerful baked-in features designed around the specific use case of political fundraising, communication, and organizing.
+Airgame is a free, open-source, super simple website platform for political campaigns. It installs like any other WordPress theme, but comes preloaded with tons of powerful baked-in features designed around the specific use case of political fundraising, communication, and organizing. And it's wrapped in cutting-edge design and beautiful open-source fonts and assets.
 
 ![airgame screenshot](http://i.imgur.com/zktrdib.png)
 
