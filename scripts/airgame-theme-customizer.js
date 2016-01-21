@@ -39,6 +39,12 @@
       });
     });
 
+    wp.customize( 'airgame_email_signup_button_text', function( value ) {
+      value.bind( function( to ) {
+        $( '.airgame_email_signup_button_text' ).text( to );
+      });
+    });
+
     wp.customize( 'airgame_primary_logo', function( value ) {
 		  value.bind( function( to ) {
          $( '.airgame-logo' ).attr( 'src', to );

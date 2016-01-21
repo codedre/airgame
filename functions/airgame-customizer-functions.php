@@ -32,7 +32,6 @@
 //==== [  2G. Headlines  ]
 //-- [  2G1. Headlines > Front Page Headline  ]
 //-- [  2G2. Headlines > Front Page Subheadline  ]
-//-- [  2G3. Headlines > Footer Email Signup Headline  ]
 //==== [  2H. Images  ]
 //-- [  2H1. Images > Primary Logo  ]
 //-- [  2H2. Images > Alternate Logo  ]
@@ -150,24 +149,24 @@ function airgame_customize_register( $wp_customize ) {
     )
   );
 
-  //----------- [  2D1. Email Signup > Email Signup Button Call to Action  ]
+  //----------- [  2D1. Headlines > Footer Email Signup Headline  ]
 
-  $wp_customize->add_setting(
-    'airgame_email_signup_button_call_to_action',
-    array(
-      'default'            => '',
-			'sanitize_callback'  => 'airgame_sanitize',
-			'transport'          => 'postMessage'
-    )
-  );
-  $wp_customize->add_control(
-    'airgame_email_signup_button_call_to_action',
-    array(
-      'section'  => 'email_signup',
-      'label'    => 'Email Signup Call to Action',
-      'type'     => 'text'
-    )
-  );
+    $wp_customize->add_setting(
+      'airgame_footer_email_signup_headline',
+      array(
+        'default'            => 'Join the campaign now',
+        'sanitize_callback'  => 'airgame_sanitize',
+        'transport'          => 'postMessage'
+      )
+    );
+    $wp_customize->add_control(
+      'airgame_footer_email_signup_headline',
+      array(
+        'section'  => 'email_signup',
+        'label'    => 'Footer Email Signup Headline',
+        'type'     => 'text'
+      )
+    );
 
   //----------- [  2D2. Email Signup > Email Signup Button Text  ]
 
@@ -485,25 +484,6 @@ function airgame_customize_register( $wp_customize ) {
       'type'     => 'text'
     )
   );
-
-  //----------- [  2G3. Headlines > Footer Email Signup Headline  ]
-
-    $wp_customize->add_setting(
-      'airgame_footer_email_signup_headline',
-      array(
-        'default'            => 'Join the campaign now',
-        'sanitize_callback'  => 'airgame_sanitize',
-        'transport'          => 'postMessage'
-      )
-    );
-    $wp_customize->add_control(
-      'airgame_footer_email_signup_headline',
-      array(
-        'section'  => 'headlines',
-        'label'    => 'Footer Email Signup Headline',
-        'type'     => 'text'
-      )
-    );
 
   //=============== [  2H. Images  ]
 

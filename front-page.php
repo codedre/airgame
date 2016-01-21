@@ -26,7 +26,7 @@
       <form class="front-page-hero-email-signup">
         <input class="email-signup-email" placeholder="Email address" type="text"/ >
         <input class="email-signup-zip" placeholder="ZIP code" type="text"/ >
-        <button>I'm in!</button>
+        <button class="airgame_email_signup_button_text"><?php echo get_theme_mod( 'airgame_email_signup_button_text' ); ?></button>
       </form>
     </div>
   </div>
