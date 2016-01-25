@@ -51,4 +51,10 @@
       });
     });
 
+    wp.customize( 'airgame_volunteer_button_text', function( value ) {
+      value.bind( function( to ) {
+        $( '.airgame_volunteer_button_text' ).text( to );
+      });
+    });
+
 })( jQuery );

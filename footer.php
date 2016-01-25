@@ -39,12 +39,14 @@
 
     <div class="airgame-footer-ask-buttons">
       <div class="ask-buttons-container">
-        <button class="ask-button ask-contribute">
-          <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
-        </button>
-        <button class="ask-button ask-volunteer">
-          <?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?>
-        </button>
+        <a href="<?php echo get_home_url(); ?>/forms/contribute">
+          <button class="ask-button ask-contribute airgame_contribute_button_text">
+            <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
+          </button>
+        </a>
+          <button class="ask-button ask-volunteer airgame_volunteer_button_text">
+            <?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?>
+          </button>
       </div>
     </div>
 

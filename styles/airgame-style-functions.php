@@ -222,17 +222,16 @@ div.footer-signup {
 }
 
 .airgame-footer-logo {
-  opacity: 0.15;
   margin-bottom: 30px;
 }
 
 .airgame-disclaimer-container {
   text-align: center;
   text-transform: uppercase;
-  font-size: 75%;
+  font-size: 60%;
   color: <?php echo $colorPrimaryLight; ?>;
   letter-spacing: 2px;
-  max-width: 700px;
+  max-width: 400px;
   margin: 0 auto 40px auto;
   padding: 10px;
   border: 1.5px solid <?php echo $colorPrimaryLight; ?>;
