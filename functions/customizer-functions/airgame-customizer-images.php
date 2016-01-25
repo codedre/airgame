@@ -22,7 +22,7 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
   'airgame_primary_logo',
   array(
-    'transport' => 'postMessage'
+    'transport' => 'refresh'
   )
 );
 $wp_customize->add_control(
@@ -44,7 +44,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
   'airgame_alternate_logo',
   array(
-    'transport' => 'postMessage'
+    'transport' => 'refresh'
   )
 );
 $wp_customize->add_control(

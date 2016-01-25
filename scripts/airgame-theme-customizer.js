@@ -45,16 +45,10 @@
       });
     });
 
-    wp.customize( 'airgame_primary_logo', function( value ) {
-		  value.bind( function( to ) {
-         $( '.airgame-logo' ).attr( 'src', to );
-		  } );
-	  });
-
-    wp.customize( 'airgame_alternate_logo', function( value ) {
+    wp.customize( 'airgame_contribute_button_text', function( value ) {
       value.bind( function( to ) {
-         $( '.airgame-footer-logo' ).attr( 'src', to );
-      } );
+        $( '.airgame_contribute_button_text' ).text( to );
+      });
     });
 
 })( jQuery );

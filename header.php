@@ -34,7 +34,7 @@
 
             <a href="<?php echo get_home_url(); ?>/forms/contribute">
               <div class="airgame-top-donate">
-                <h3>
+                <h3 class="airgame_contribute_button_text">
                   <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
                 </h3>
               </div>
