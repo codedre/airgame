@@ -3,6 +3,8 @@
 // This file contains all customization of the Customizer screen
 // (Appearance > Customize).
 
+// It is enormous and unwieldy. I apologize. Unfortunately, customize_register
+
 //--------------------------Table of Contents---------------------------------//
 
 //====<><><> [  1. Customizer async updating  ]
@@ -91,101 +93,18 @@ function airgame_customize_register( $wp_customize ) {
   //Removes the Blog Description text field. This theme does not use it.
   $wp_customize->remove_control('blogdescription');
 
-  //=============== [  2C. Disclaimers Section  ]
+  /*
+  *=============== [  Disclaimers Section  ]
+  */
 
-  $wp_customize->add_section(
-    'disclaimers',
-    array(
-        'title'     => 'Disclaimers',
-        'priority'  => 200
-    )
-  );
+  require 'customizer-functions/airgame-customizer-disclaimers.php';
 
-  //----------- [  2C1. Disclaimers > Disclaimer Setting & Control  ]
+  /*
+  *=============== [  Email Signup Section  ]
+  */
 
-  $wp_customize->add_setting(
-		'airgame_disclaimer',
-		array(
-      'default'            => '',
-			'sanitize_callback'  => 'airgame_sanitize',
-			'transport'          => 'postMessage'
-		)
-	);
-	$wp_customize->add_control(
-		'airgame_disclaimer',
-		array(
-			'section'  => 'disclaimers',
-			'label'    => 'Boxed Disclaimer',
-			'type'     => 'text'
-		)
-	);
+  require 'customizer-functions/airgame-customizer-email-signup.php';
 
-  //----------- [  2C2. Disclaimers > Copyright Setting & Control  ]
-
-  $wp_customize->add_setting(
-    'airgame_copyright',
-    array(
-      'default'            => '',
-			'sanitize_callback'  => 'airgame_sanitize',
-			'transport'          => 'postMessage'
-    )
-  );
-  $wp_customize->add_control(
-    'airgame_copyright',
-    array(
-      'section'  => 'disclaimers',
-      'label'    => 'Copyright',
-      'type'     => 'text'
-    )
-  );
-
-  //=============== [  2D. Email Signup Section  ]
-
-  $wp_customize->add_section(
-    'email_signup',
-    array(
-        'title'     => 'Email Signup',
-        'priority'  => 300
-    )
-  );
-
-  //----------- [  2D1. Headlines > Footer Email Signup Headline  ]
-
-    $wp_customize->add_setting(
-      'airgame_footer_email_signup_headline',
-      array(
-        'default'            => 'Join the campaign now',
-        'sanitize_callback'  => 'airgame_sanitize',
-        'transport'          => 'postMessage'
-      )
-    );
-    $wp_customize->add_control(
-      'airgame_footer_email_signup_headline',
-      array(
-        'section'  => 'email_signup',
-        'label'    => 'Footer Email Signup Headline',
-        'type'     => 'text'
-      )
-    );
-
-  //----------- [  2D2. Email Signup > Email Signup Button Text  ]
-
-  $wp_customize->add_setting(
-    'airgame_email_signup_button_text',
-    array(
-      'default'            => '',
-			'sanitize_callback'  => 'airgame_sanitize',
-			'transport'          => 'postMessage'
-    )
-  );
-  $wp_customize->add_control(
-    'airgame_email_signup_button_text',
-    array(
-      'section'  => 'email_signup',
-      'label'    => 'Email Signup Button Text',
-      'type'     => 'text'
-    )
-  );
 
   //=============== [  2E. Contribute & Volunteer Buttons Section  ]
 

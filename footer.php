@@ -1,5 +1,12 @@
-  <?php wp_footer(); ?>
+  <?php wp_footer();
 
+  /*
+  * Variable declarations
+  */
+
+  $altlogo = get_theme_mod( 'airgame_alternate_logo' );
+
+  ?>
   <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
     <div class="airgame-footer-email-signup" <?php
         echo "style=\"background-image: url('http://i.imgur.com/Bx5mrnT.jpg')\"";
@@ -18,9 +25,11 @@
   <?php endif; ?>
 
   <div class="airgame-footer">
-    <a href="<?php echo get_home_url(); ?>">
-      <img class="airgame-footer-logo" src="<?php echo get_theme_mod( 'airgame_alternate_logo' ); ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
-    </a>
+    <?php if ($altlogo): ?>
+      <a href="<?php echo get_home_url(); ?>">
+        <img class="airgame-footer-logo" src="<?php echo $altlogo; ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+      </a>
+    <?php endif; ?>
     <div class="airgame-disclaimer-container">
       <h2 class="airgame-disclaimer"><?php echo get_theme_mod( 'airgame_disclaimer' ); ?></h2>
     </div>
