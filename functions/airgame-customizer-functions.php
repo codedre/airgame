@@ -18,7 +18,7 @@
 // 'customizer-functions'.
 
 /*
-*=========== [  Customizer async updating  ]
+*=========== [  Customizer live updating  ]
 */
 
 // Calls to theme-customizer.js, which allows realtime asynchronous updating of

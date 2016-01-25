@@ -2,7 +2,24 @@
 
 // header("Content-type: text/css; charset: UTF-8");
 
-$color = '#073A59';
+/*
+* =========== [  Color Variables  ]
+*/
+
+// Primary color spectrum
+$colorPrimaryVeryDark = '#032140';
+$colorPrimaryDark = '#042549';
+$colorPrimaryMedium = '#052B53';
+$colorPrimaryLight = '#4B6C94';
+$colorPrimaryVeryLight = '#7997BD';
+$colorPrimaryUltraLight = '#E8EFF8';
+
+// Focus color spectrum
+$colorFocusMedium = '#D23F47';
+$colorFocusBright = '#E3110C';
+
+// Whitespace color
+$colorWhitespace = '#FFFFFF';
 
 ?>
 <style>
@@ -21,7 +38,7 @@ $color = '#073A59';
 */
 
 body {
-  background-color: <?php echo $color; ?>;
+  background-color: <?php echo $colorPrimaryVeryDark; ?>;
 }
 
 .airgame-container {
@@ -71,14 +88,15 @@ body {
     font-size: 85%;
     font-weight: 900;
     letter-spacing: 0.8px;
-    color: rgba(255,255,255,0.6);
+    color: <?php echo $colorPrimaryVeryLight; ?>;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
+    text-shadow: 0 1px 1px <?php echo $colorPrimaryVeryDark; ?>;
 }
 .menu .current-menu-item a,
 .menu .current_page_item a,
 .menu a:hover {
-    color: rgba(255,255,255,1);
+    color: <?php echo $colorWhitespace; ?>;
 }
 
 /*
@@ -111,14 +129,14 @@ body {
   clear: right;
   width: 200px;
   height: 50px;
-  background-color: #D23F47;
-  color: #fff;
+  background-color: <?php echo $colorFocusMedium; ?>;
+  color: <?php echo $colorWhitespace; ?>;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 
 .menu-actions .airgame-top-donate:hover {
-  background-color: #E83637;
+  background-color: <?php echo $colorFocusBright; ?>;
 }
 
 .airgame-top-donate h3 {
@@ -134,7 +152,7 @@ body {
 
 .front-page-hero-email-signup input,
 .front-page-hero-email-signup button {
-  border: 2px solid #4B6C94;
+  border: 2px solid <?php echo $colorPrimaryLight; ?>;
   padding: 10px;
   font-size: 120%;
 }
@@ -142,20 +160,20 @@ body {
 .front-page-hero-email-signup input.email-signup-email {
   width: 50%;
   left: 0;
-  color: #4B6C94;
+  color: <?php echo $colorPrimaryLight; ?>;
 }
 
 .front-page-hero-email-signup input.email-signup-zip {
   width: 25%;
   left: 0;
-  color: #4B6C94;
+  color: <?php echo $colorPrimaryLight; ?>;
 }
 
 .front-page-hero-email-signup button {
   width: 20%;
   right: 0;
-  background-color: #052B53;
-  color: #fff;
+  background-color: <?php echo $colorPrimaryMedium; ?>;
+  color: <?php echo $colorWhitespace; ?>;
   text-transform: uppercase;
 }
 
@@ -171,7 +189,7 @@ div.footer-signup {
 
 .airgame-footer-email-signup {
   min-height: 500px;
-  color: #fff;
+  color: <?php echo $colorWhitespace; ?>;
   padding: 200px 50px 50px 50px;
   background-size: cover;
   background-position: 55% 35%;
@@ -189,7 +207,7 @@ div.footer-signup {
 
 .airgame-footer {
   text-align: center;
-  color: #063669;
+  color: <?php echo $colorPrimaryVeryDark; ?>;
   background-color: #032140;
   padding: 30px 0 120px 0;
 }
@@ -223,6 +241,12 @@ div.footer-signup {
   max-width: 500px;
   text-transform: uppercase;
   color: #063669;
+}
+
+.airgame-footer-ask-buttons {
+  width: 100%;
+  padding: 2em;
+  text-align: center;
 }
 
 /*

@@ -1,8 +1,8 @@
 <?php
 
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Include abstracted PHP function files  ] <><><>========//
-////////////////////////////////////////////////////////////////////////////////
+/*
+* =========== [  Include abstracted PHP function files  ]
+*/
 
 // Enqueueing of CSS and JavaScript
 require_once get_template_directory() . '/functions/airgame-enqueue-functions.php';
