@@ -39,10 +39,10 @@
 
     <div class="airgame-footer-ask-buttons">
       <div class="ask-buttons-container">
-        <button class="">
+        <button class="ask-button ask-contribute">
           <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
         </button>
-        <button class="">
+        <button class="ask-button ask-volunteer">
           <?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?>
         </button>
       </div>

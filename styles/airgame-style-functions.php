@@ -259,6 +259,45 @@ div.footer-signup {
   background-color: <?php echo $colorPrimaryDark; ?>
 }
 
+.ask-buttons-container {
+  margin: 0 auto;
+  width: 40em;
+  text-align: center;
+}
+
+.ask-button {
+  width: 45%;
+  height: 2.5em;
+  margin: 0.5em;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  color: <?php echo $colorWhitespace; ?>;
+}
+
+.ask-contribute {
+  background-color: <?php echo $colorFocusMedium; ?>;
+  border: 2px solid <?php echo $colorFocusMedium; ?>;
+}
+
+.ask-contribute:hover {
+  background-color: <?php echo $colorFocusBright; ?>;
+  border: 2px solid <?php echo $colorFocusBright; ?>;
+}
+
+.ask-volunteer {
+  background-color: <?php echo $colorPrimaryVeryDark; ?>;
+  border: 2px solid <?php echo $colorWhitespace; ?>;
+}
+
+.ask-volunteer:hover {
+  background-color: <?php echo $colorWhitespace; ?>;
+  color: <?php echo $colorPrimaryVeryDark; ?>;
+}
+
+
+
 /*
 *=====================[  Content  ]=============================================
 */
