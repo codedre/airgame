@@ -64,22 +64,22 @@ $wp_customize->remove_control('blogdescription');
 // that section.
 
 // Disclaimers Section
-require_once 'customizer-functions/airgame-customizer-disclaimers.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-disclaimers.php';
 
 // Email Signup Section
-require_once 'customizer-functions/airgame-customizer-email-signup.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-email-signup.php';
 
 // Contribute & Volunteer Buttons Section
-require_once 'customizer-functions/airgame-customizer-contribute-volunteer.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-contribute-volunteer.php';
 
 // Social Media Section
-require_once 'customizer-functions/airgame-customizer-social-media.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-social-media.php';
 
 // Headlines Section
-require_once 'customizer-functions/airgame-customizer-headlines.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headlines.php';
 
 // Images Section
-require_once 'customizer-functions/airgame-customizer-images.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
 
 }
 add_action( 'customize_register', 'airgame_customize_register' );

@@ -7,7 +7,17 @@
   $altlogo = get_theme_mod( 'airgame_alternate_logo' );
 
   ?>
+
+  <!--
+  * Conditional statement that fires on form pages only.
+  -->
+
   <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
+
+    <!--
+    * Email signup section over large image.
+    -->
+
     <div class="airgame-footer-email-signup" <?php
         echo "style=\"background-image: url('http://i.imgur.com/Bx5mrnT.jpg')\"";
       ?>>
@@ -22,7 +32,23 @@
         </form>
       </div>
     </div>
+
+    <!--
+    * Ask button section over lightened main color.
+    -->
+
+    <div class="airgame-footer-ask-buttons">
+      <div class="ask-buttons-container">
+        <button class=""><?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?></button>
+        <button class=""><?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?></button>
+      </div>
+    </div>
+
   <?php endif; ?>
+
+  <!--
+  * General footer content section over dark main color.
+  -->
 
   <div class="airgame-footer">
     <?php if ($altlogo): ?>
