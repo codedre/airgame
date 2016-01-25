@@ -287,12 +287,13 @@ div.footer-signup {
 
 .ask-volunteer {
   background-color: <?php echo $colorPrimaryVeryDark; ?>;
-  border: 2px solid <?php echo $colorWhitespace; ?>;
+  border: 2px solid <?php echo $colorPrimaryLight; ?>;
 }
 
 .ask-volunteer:hover {
   background-color: <?php echo $colorWhitespace; ?>;
   color: <?php echo $colorPrimaryVeryDark; ?>;
+  border: 2px solid <?php echo $colorWhitespace; ?>;
 }
 
 
