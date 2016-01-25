@@ -1,5 +1,8 @@
 <?php
 
+// This file registers one of several new options panels on the Customizer
+// screen. It is called by /funtions/airgame-customizer-functions.php.
+
 /*
 *=============== [ Contribute & Volunteer Buttons Section  ]
 */

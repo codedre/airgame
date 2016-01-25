@@ -1,6 +1,11 @@
 <?php
 
-//=============== [  2G. Headlines  ]
+// This file registers one of several new options panels on the Customizer
+// screen. It is called by /funtions/airgame-customizer-functions.php.
+
+/*
+*=============== [  Headlines  ]
+*/
 
 $wp_customize->add_section(
   'headlines',
@@ -10,7 +15,9 @@ $wp_customize->add_section(
   )
 );
 
-//----------- [  2G1. Headlines > Front Page Headline  ]
+/*
+*----------- [  Headlines > Front Page Headline  ]
+*/
 
 $wp_customize->add_setting(
   'airgame_front_page_headline',
@@ -29,7 +36,9 @@ $wp_customize->add_control(
   )
 );
 
-//----------- [  2G2. Headlines > Front Page Subheadline  ]
+/*
+*----------- [  Headlines > Front Page Subheadline  ]
+*/
 
 $wp_customize->add_setting(
   'airgame_front_page_subheadline',

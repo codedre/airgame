@@ -1,6 +1,11 @@
 <?php
 
-//=============== [  2H. Images  ]
+// This file registers one of several new options panels on the Customizer
+// screen. It is called by /funtions/airgame-customizer-functions.php.
+
+/*
+*=============== [  Images  ]
+*/
 
 $wp_customize->add_section(
   'images',
@@ -10,7 +15,9 @@ $wp_customize->add_section(
   )
 );
 
-//----------- [  2H1. Images > Primary Logo  ]
+/*
+*----------- [  Images > Primary Logo  ]
+*/
 
 $wp_customize->add_setting(
   'airgame_primary_logo',
@@ -30,7 +37,9 @@ $wp_customize->add_control(
   )
 );
 
-//----------- [  2H2. Images > Alternate Logo  ]
+/*
+*----------- [  Images > Alternate Logo  ]
+*/
 
 $wp_customize->add_setting(
   'airgame_alternate_logo',
