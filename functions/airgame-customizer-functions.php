@@ -1,11 +1,34 @@
 <?php
 
+// This pages encapsulates functions that set up Airgame's
+// modification of the Customizer page (Appearance > Customize from the
+// WordPress backend sidebar).
+
+// To ensure forward-compatibility with Calypso, Airgame's options are located
+// either on the Customizer screen (Appearance > Customize) or on individual
+// post/page editing pages. Airgame has no discrete backend options page.
+
+// Airgame adds numerous sections, and settings within those sections, to the
+// Customizer screen. Because each section and setting requires lengthy blocks
+// of code to instantiate, each section's instantiation functions have been
+// abstracted out from the customize_register function towards the end of this
+// document with require_once calls to separate individual php files.
+
+// These files are located within a sibling directory of this file called
+// 'customizer-functions'.
+
 /*
 *=========== [  Customizer async updating  ]
 */
 
 // Calls to theme-customizer.js, which allows realtime asynchronous updating of
-// changes made in the Customizer so users can watch them being applied.
+// changes made in the Customizer so users can watch them being applied,
+// through the 'transport' => 'postMessage' option in add_setting.
+
+// Some settings do not use postMessage but remain set to the default 'refresh'
+// setting, which refreshes the page. This is generally because the setting is
+// linked to a conditional statement which must be rerun with a page refresh
+// so the user can observe it updating properly.
 
 function customizer_live_preview() {
 
@@ -23,11 +46,6 @@ add_action( 'customize_preview_init', 'customizer_live_preview' );
 /*
 *=========== [  Customizer custom options  ]
 */
-
-// To ensure forward-compatibility with Calypso, Airgame's options are located
-// either on the Customizer screen (Appearance > Customize) or on individual
-// post / page / custom post type pages. Airgame has no discrete backend
-// options page.
 
 function airgame_customize_register( $wp_customize ) {
 
