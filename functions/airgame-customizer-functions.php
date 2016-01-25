@@ -81,8 +81,8 @@ $wp_customize->remove_control('blogdescription');
 // file in /customizer-functions/, which includes settings & controls for
 // that section.
 
-// Disclaimers Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-disclaimers.php';
+// Headlines & Disclaimers Section
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headines-disclaimers.php';
 
 // Email Signup Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-email-signup.php';
@@ -92,9 +92,6 @@ require_once get_template_directory() . '/functions/customizer-functions/airgame
 
 // Social Media Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-social-media.php';
-
-// Headlines Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headlines.php';
 
 // Images Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
