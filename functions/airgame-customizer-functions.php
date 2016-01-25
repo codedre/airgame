@@ -82,7 +82,7 @@ $wp_customize->remove_control('blogdescription');
 // that section.
 
 // Headlines & Disclaimers Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headines-disclaimers.php';
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headlines-disclaimers.php';
 
 // Email Signup Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-email-signup.php';
