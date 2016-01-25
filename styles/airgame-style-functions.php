@@ -14,12 +14,21 @@ $colorPrimaryLight = '#4B6C94';
 $colorPrimaryVeryLight = '#7997BD';
 $colorPrimaryUltraLight = '#E8EFF8';
 
+// Alternate color spectrum
+$colorAlternateMedium = '#2247B0';
+$colorAlternateBright = '#244CE5';
+
 // Focus color spectrum
 $colorFocusMedium = '#D23F47';
 $colorFocusBright = '#E3110C';
 
-// Whitespace color
+// Monochrome color spectrom
 $colorWhitespace = '#FFFFFF';
+$colorLightGrey = '#ABABAB';
+$colorMediumGrey = '#787878';
+$colorDarkGrey = '#474747';
+$colorBlack = '#1C1C1C';
+
 
 ?>
 <style>
@@ -88,10 +97,10 @@ body {
     font-size: 85%;
     font-weight: 900;
     letter-spacing: 0.8px;
-    color: <?php echo $colorPrimaryVeryLight; ?>;
+    color: <?php echo $colorLightGrey; ?>;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
-    text-shadow: 0 1px 1px <?php echo $colorPrimaryVeryDark; ?>;
+    text-shadow: 0 1px 1px <?php echo $colorBlack; ?>;
 }
 .menu .current-menu-item a,
 .menu .current_page_item a,
@@ -207,8 +216,8 @@ div.footer-signup {
 
 .airgame-footer {
   text-align: center;
-  color: <?php echo $colorPrimaryVeryDark; ?>;
-  background-color: #032140;
+  color: <?php echo $colorPrimaryDark; ?>;
+  background-color: <?php echo $colorPrimaryVeryDark; ?>;
   padding: 30px 0 120px 0;
 }
 
@@ -221,12 +230,12 @@ div.footer-signup {
   text-align: center;
   text-transform: uppercase;
   font-size: 75%;
-  color: #7D99BB;
+  color: <?php echo $colorPrimaryLight; ?>;
   letter-spacing: 2px;
   max-width: 700px;
   margin: 0 auto 40px auto;
   padding: 10px;
-  border: 1.5px solid #7D99BB;
+  border: 1.5px solid <?php echo $colorPrimaryLight; ?>;
 }
 
 .airgame-disclaimer-container h2 {
@@ -240,13 +249,14 @@ div.footer-signup {
   margin: 0 auto;
   max-width: 500px;
   text-transform: uppercase;
-  color: #063669;
+  color: <?php echo $colorPrimaryMedium; ?>;
 }
 
 .airgame-footer-ask-buttons {
   width: 100%;
   padding: 2em;
   text-align: center;
+  background-color: <?php echo $colorPrimaryDark; ?>
 }
 
 /*
@@ -263,7 +273,7 @@ div.footer-signup {
 }
 
 .airgame-content-wrapper {
-  background-color: #fff;
+  background-color: <?php echo $colorWhitespace; ?>;
   width: 100%;
   width: 100vw;
   padding: 60px 25px;
@@ -275,7 +285,7 @@ div.footer-signup {
 }
 
 .airgame-content-container * {
-  color: #1c1c1c;
+  color: <?php echo $colorBlack; ?>;
   line-height: 45px;
   font-weight: 500;
 }
