@@ -5,19 +5,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Enqueueing of CSS and JavaScript
-require_once( get_template_directory() . '/functions/airgame-enqueue-functions.php' );
+require_once get_template_directory() . '/functions/airgame-enqueue-functions.php';
 
 // Customizer ( Appearance > Customize ) custom options
-require_once( get_template_directory() . '/functions/airgame-customizer-functions.php' );
+require_once get_template_directory() . '/functions/airgame-customizer-functions.php';
 
 // Overrides for WordPress default backend settings and styles
-require_once( get_template_directory() . '/functions/airgame-wordpress-override-functions.php' );
+require_once get_template_directory() . '/functions/airgame-wordpress-override-functions.php';
 
 // Custom post types setup
-require_once( get_template_directory() . '/functions/airgame-custom-post-types-functions.php' );
+require_once get_template_directory() . '/functions/airgame-custom-post-types-functions.php';
 
 //Menu initialization
-require_once( get_template_directory() . '/functions/airgame-menu-functions.php' );
+require_once get_template_directory() . '/functions/airgame-menu-functions.php';
 
 // IMPORTANT NOTE: Functions that interfere with HTTP headers must be called after wp_head.
 // These have been abstracted out to /functions/airgame-after-headers-functions.php and are
