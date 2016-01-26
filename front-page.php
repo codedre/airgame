@@ -1,3 +1,15 @@
+<?php
+
+/*
+* Variable declarations
+*/
+
+$frontPageTopImage = get_theme_mod( 'airgame_front_page_top_image' );
+
+$frontPageHeadline = get_theme_mod( 'airgame_front_page_headline' );
+$frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
+
+?>
 
 <!--===========<><><> [  Header  ] <><><>=============-->
 
@@ -8,19 +20,17 @@
 <div class="airgame-body front-page-body">
 
 <!--===========<><><> [  Hero Box  ] <><><>=============-->
-<div class="airgame-body front-page-hero-box" <?php
-  echo "style=\"background-image: url('http://i.imgur.com/f3z56h9.jpg')\"";
-?>>
+<div class="airgame-body front-page-hero-box" style="background-image: url('<?php echo $frontPageTopImage; ?>')">;
   <div class="airgame-container">
     <div class="airgame-half-container">
       <div class="airgame-hed-box">
         <h1 class="airgame_front_page_headline">
-          <?php echo get_theme_mod( 'airgame_front_page_headline' ); ?>
+          <?php echo $frontPageHeadline; ?>
         </h1>
       </div>
       <div class="airgame-dek-box">
         <h2 class="airgame_front_page_subheadline">
-          <?php echo get_theme_mod( 'airgame_front_page_subheadline' ); ?>
+          <?php echo $frontPageSubheadline; ?>
         </h2>
       </div>
       <form class="front-page-hero-email-signup">
