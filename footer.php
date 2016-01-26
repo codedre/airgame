@@ -34,7 +34,7 @@
     </div>
 
     <!--
-    * Ask button section over lightened main color.
+    * Contribute / Volunteer ask button & links section over lightened main color.
     -->
 
     <div class="airgame-footer-ask-buttons">

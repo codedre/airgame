@@ -1,7 +1,7 @@
 <?php
 
 // This pages encapsulates functions that set up Airgame's
-// modification of the Customizer page (Appearance > Customize from the
+// modification of the Customizer screen (Appearance > Customize from the
 // WordPress backend sidebar).
 
 // To ensure forward-compatibility with Calypso, Airgame's options are located
@@ -11,8 +11,8 @@
 // Airgame adds numerous sections, and settings within those sections, to the
 // Customizer screen. Because each section and setting requires lengthy blocks
 // of code to instantiate, each section's instantiation functions have been
-// abstracted out from the customize_register function towards the end of this
-// document with require_once calls to separate individual php files.
+// abstracted out from the customize_register function with require_once calls
+// to separate individual php files.
 
 // These files are located within a sibling directory of this file called
 // 'customizer-functions'.
@@ -21,14 +21,24 @@
 *=========== [  Customizer live updating  ]
 */
 
-// Calls to theme-customizer.js, which allows realtime asynchronous updating of
-// changes made in the Customizer so users can watch them being applied,
-// through the 'transport' => 'postMessage' option in add_setting.
+// Calls to /scripts/theme-customizer.js, which allows realtime asynchronous
+// updating of changes made in the Customizer so users can watch them being
+// applied. This is set through the 'transport' => 'postMessage' option in the
+// add_setting code block within individual custom Customizer section php files
+// in the 'customizer-functions' folder, sibling to this file.
 
 // Some settings do not use postMessage but remain set to the default 'refresh'
 // setting, which refreshes the page. This is generally because the setting is
 // linked to a conditional statement which must be rerun with a page refresh
-// so the user can observe it updating properly.
+// so the user can observe it updating properly, or because of some other
+// error that prevents postMessage from playing nicely with the setting.
+
+// Live updating with postMessage is an optional backend-only user experience
+// feature and does not affect the database. If you're experiencing problems
+// with live updating on the Customizer screen and you're unable to debug
+// /scripts/theme-customizer.js, change 'postMessage' to 'refresh' in
+// the Customizer section's php file within the 'customizer-functions'
+// directory.
 
 function customizer_live_preview() {
 
@@ -53,51 +63,61 @@ function airgame_customize_register( $wp_customize ) {
 		return;
 	}
 
-/*
-*=============== [  Removes Static Front Page  ]
-*/
+  /*
+  *=============== [  New Customizer Controls  ]
+  */
 
-// Airgame forces a static front page. It is not recommended for users to
-// switch to a blog posts front page. This removes that option from the
-// Customizer screen.
+  // Defines custom controls used in the custom Customizer sections.
+  // This must be require_once'd before the Customizer sections or they'll
+  // probably break or something idk but it won't be good lol so don't do it k
 
-$wp_customize->remove_section( 'static_front_page' );
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-custom-controls.php';
 
-/*
-*=============== [  Title & Icon (i.e. Site Identity) Section  ]
-*/
+  /*
+  *=============== [  Removes Static Front Page  ]
+  */
 
-// Allows the Site Title to be updated in realtime.
-$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+  // Airgame forces a static front page. It is not recommended for users to
+  // switch to a blog posts front page. This removes that option from the
+  // Customizer screen.
 
-// Removes the Blog Description text field. This theme does not use it.
-$wp_customize->remove_control('blogdescription');
+  $wp_customize->remove_section( 'static_front_page' );
 
-/*
-*=============== [  New Customizer Sections  ]
-*/
+  /*
+  *=============== [  Title & Icon (i.e. Site Identity) Section  ]
+  */
 
-// Adds new Customizer sections. Each section is abstracted to its own php
-// file in /customizer-functions/, which includes settings & controls for
-// that section.
+  // Allows the Site Title to be updated in realtime.
+  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 
-// Headlines & Disclaimers Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headlines-disclaimers.php';
+  // Removes the Blog Description text field. This theme does not use it.
+  $wp_customize->remove_control('blogdescription');
 
-// Email Signup Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-email-signup.php';
+  /*
+  *=============== [  New Customizer Sections  ]
+  */
 
-// Contribute & Volunteer Buttons Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-contribute-volunteer.php';
+  // Adds new Customizer sections. Each section is abstracted to its own php
+  // file in /customizer-functions/, which includes settings & controls for
+  // that section.
 
-// Social Media Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-social-media.php';
+  // Headlines & Disclaimers Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-headlines-disclaimers.php';
 
-// Images Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
+  // Email Signup Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-email-signup.php';
 
-// Airgame Style Section
-require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-airgame-style.php';
+  // Contribute & Volunteer Buttons Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-contribute-volunteer.php';
+
+  // Social Media Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-social-media.php';
+
+  // Images Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
+
+  // Airgame Style Section
+  require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-airgame-style.php';
 
 }
 add_action( 'customize_register', 'airgame_customize_register' );

@@ -41,20 +41,19 @@ $wp_customize->add_control(
 */
 
 $wp_customize->add_setting(
-  'airgame_contribute_button_form' . $count,
+  'airgame_contribute_button_form',
   array(
     'default'            => '',
-    'sanitize_callback'  => 'airgame_sanitize',
     'transport'          => 'postMessage'
   )
 );
-
 $wp_customize->add_control(
-  'airgame_contribute_button_form' . $count,
-  array(
-    'label'    => __( 'Form Linked to Contribute Button', 'textdomain' ),
-    'section'  => 'contribute_volunteer',
-    'type'     => 'dropdown-pages'
+  new Form_Pages_Dropdown_Control(
+    $wp_customize, 'airgame_contribute_button_form', array(
+      'label'    => __( 'Form Linked to Contribute Button', 'textdomain' ),
+      'section'  => 'contribute_volunteer',
+      'type'     => 'form_pages_dropdown'
+    )
   )
 );
 
@@ -87,17 +86,16 @@ $wp_customize->add_setting(
   'airgame_volunteer_button_form',
   array(
     'default'            => '',
-    'sanitize_callback'  => 'airgame_sanitize',
     'transport'          => 'postMessage'
   )
 );
-
 $wp_customize->add_control(
-  'airgame_volunteer_button_form',
-  array(
-    'label'    => __( 'Form Linked to Volunteer Button', 'textdomain' ),
-    'section'  => 'contribute_volunteer',
-    'type'     => 'dropdown-pages'
+  new Form_Pages_Dropdown_Control(
+    $wp_customize, 'airgame_volunteer_button_form', array(
+      'label'    => __( 'Form Linked to Volunteer Button', 'textdomain' ),
+      'section'  => 'contribute_volunteer',
+      'type'     => 'form_pages_dropdown'
+    )
   )
 );
 

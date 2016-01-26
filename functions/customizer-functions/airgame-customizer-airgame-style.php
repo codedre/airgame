@@ -68,7 +68,8 @@ $wp_customize->add_control(
   'airgame_colors',
   array(
     'section'  => 'airgame_style',
-    'label'    => 'Colors'
+    'label'    => 'Colors',
+    'type'     => 'text'
   )
 );
 

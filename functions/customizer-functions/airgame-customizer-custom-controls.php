@@ -4,8 +4,8 @@
 // control types. These types are then referenced in the add_control sections of
 // Customizer section setup files in functions/customizer-functions.
 
-if( class_exists( 'WP_Customize_Control' ) ):
-	class WP_Customize_Form_Pages_Dropdown_Control extends WP_Customize_Control {
+// if( class_exists( 'WP_Customize_Control' ) ):
+	class Form_Pages_Dropdown_Control extends WP_Customize_Control {
 		public $type = 'form_pages_dropdown';
 
 		public function render_content() {
@@ -34,6 +34,6 @@ if( class_exists( 'WP_Customize_Control' ) ):
 		<?php
 		}
 	}
-endif;
+// endif;
 
 ?>
