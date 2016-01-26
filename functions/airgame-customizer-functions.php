@@ -96,7 +96,7 @@ require_once get_template_directory() . '/functions/customizer-functions/airgame
 // Images Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
 
-// Layout Section Test ##### UPDATE THIS LATER #####
+// Airgame Style Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-airgame-style.php';
 
 }
