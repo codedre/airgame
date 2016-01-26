@@ -50,6 +50,11 @@ body {
   background-color: <?php echo $colorPrimaryVeryDark; ?>;
 }
 
+button {
+  cursor: pointer;
+  cursor: hand;
+}
+
 .airgame-container {
   margin: 0 auto;
   max-width: 1100px;
