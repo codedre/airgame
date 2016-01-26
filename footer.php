@@ -4,7 +4,10 @@
   * Variable declarations
   */
 
-  $altlogo = get_theme_mod( 'airgame_alternate_logo' );
+  $altLogo = get_theme_mod( 'airgame_alternate_logo' );
+  $footerImage = get_theme_mod( 'airgame_footer_image' );
+
+  $emailSignupHeadline = get_theme_mod( 'airgame_footer_email_signup_headline' );
 
   ?>
 
@@ -18,12 +21,10 @@
     * Email signup section over large image.
     -->
 
-    <div class="airgame-footer-email-signup" <?php
-        echo "style=\"background-image: url('http://i.imgur.com/Bx5mrnT.jpg')\"";
-      ?>>
+    <div class="airgame-footer-email-signup" style="background-image: url('<?php echo $footerImage; ?>')">
       <div class="airgame-container footer-signup">
         <div class="airgame-hed-box footer-signup">
-          <h1 class="airgame_footer_email_signup_headline footer-signup"><?php echo get_theme_mod( 'airgame_footer_email_signup_headline' ); ?></h1>
+          <h1 class="airgame_footer_email_signup_headline footer-signup"><?php echo $emailSignupHeadline; ?></h1>
         </div>
         <form class="front-page-hero-email-signup">
           <input class="email-signup-email" placeholder="Email address" type="text"/ >
@@ -59,9 +60,9 @@
   -->
 
   <div class="airgame-footer">
-    <?php if ($altlogo): ?>
+    <?php if ($altLogo): ?>
       <a href="<?php echo get_home_url(); ?>">
-        <img class="airgame-footer-logo" src="<?php echo $altlogo; ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
+        <img class="airgame-footer-logo" src="<?php echo $altLogo; ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
       </a>
     <?php endif; ?>
 

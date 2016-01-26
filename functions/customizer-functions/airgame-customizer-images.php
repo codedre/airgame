@@ -59,4 +59,48 @@ $wp_customize->add_control(
   )
 );
 
+/*
+*----------- [  Images > Front Page Top Image  ]
+*/
+
+$wp_customize->add_setting(
+  'airgame_front_page_top_image',
+  array(
+    'transport' => 'refresh'
+  )
+);
+$wp_customize->add_control(
+  new WP_Customize_Image_Control(
+    $wp_customize,
+    'airgame_front_page_top_image',
+    array(
+      'section'		=> 'images',
+      'label'			=> 'Front Page Top Image',
+      'description'	=> 'Select the background image to be used for the large ask section at the top of the front page.'
+    )
+  )
+);
+
+/*
+*----------- [  Images > Front Page Top Image  ]
+*/
+
+$wp_customize->add_setting(
+  'airgame_footer_image',
+  array(
+    'transport' => 'refresh'
+  )
+);
+$wp_customize->add_control(
+  new WP_Customize_Image_Control(
+    $wp_customize,
+    'airgame_footer_image',
+    array(
+      'section'		=> 'images',
+      'label'			=> 'Footer Image',
+      'description'	=> 'Select the background image to be used for the large ask section just above the footer.'
+    )
+  )
+);
+
 ?>
