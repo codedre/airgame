@@ -14,7 +14,9 @@ require_once get_template_directory() . '/functions/airgame-wordpress-override-f
 require_once get_template_directory() . '/functions/airgame-custom-post-types-functions.php';
 
 // Custom input types setup
-// NOTE: This must come before Customizer custom options or the Customizer will break
+// NOTE: This must come before Customizer custom options or the Customizer will
+// probably break or some other weird stuff will happen okay I don't know just
+// keep it here alright srsly
 require_once get_template_directory() . '/functions/airgame-custom-input-types-functions.php';
 
 // Customizer ( Appearance > Customize ) custom options
