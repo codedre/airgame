@@ -47,6 +47,15 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 </div> <!-- airgame-body front-page-hero-box -->
 
+<!--===========<><><> [  Loop  ] <><><>=============-->
+
+<!-- the WP Loop -->
+<div class="airgame-content-wrapper">
+  <div class="airgame-content-container">
+    <?php get_template_part("loop"); ?>
+  </div>
+</div>
+
 <!--===========<><><> [  Footer  ] <><><>=============-->
 
 <?php get_footer(); ?>

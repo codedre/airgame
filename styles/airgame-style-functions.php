@@ -102,15 +102,16 @@ button {
     font-size: 85%;
     font-weight: 900;
     letter-spacing: 0.8px;
-    color: <?php echo $colorLightGrey; ?>;
+    color: <?php echo $colorPrimaryUltraLight; ?>;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
-    text-shadow: 0 1px 1px <?php echo $colorBlack; ?>;
+    text-shadow: 0 1px 1px <?php echo $colorPrimaryVeryDark; ?>;
 }
 .menu .current-menu-item a,
 .menu .current_page_item a,
 .menu a:hover {
     color: <?php echo $colorWhitespace; ?>;
+
 }
 
 /*
@@ -147,10 +148,13 @@ button {
   color: <?php echo $colorWhitespace; ?>;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
+  border: 2px solid <?php echo $colorFocusMedium; ?>;
 }
 
 .menu-actions .airgame-top-donate:hover {
-  background-color: <?php echo $colorFocusBright; ?>;
+  color: <?php echo $colorFocusMedium; ?>;
+  background-color: <?php echo $colorWhitespace; ?>;
+  border: 2px solid <?php echo $colorFocusMedium; ?>;
 }
 
 .airgame-top-donate h3 {
@@ -287,8 +291,8 @@ div.footer-signup {
 }
 
 .ask-contribute:hover {
-  background-color: <?php echo $colorFocusBright; ?>;
-  border: 2px solid <?php echo $colorFocusBright; ?>;
+  background-color: <?php echo $colorWhitespace; ?>;
+  color: <?php echo $colorFocusMedium; ?>;
 }
 
 .ask-volunteer {
@@ -299,7 +303,6 @@ div.footer-signup {
 .ask-volunteer:hover {
   background-color: <?php echo $colorWhitespace; ?>;
   color: <?php echo $colorPrimaryVeryDark; ?>;
-  border: 2px solid <?php echo $colorWhitespace; ?>;
 }
 
 
