@@ -57,9 +57,9 @@ function airgame_customize_register( $wp_customize ) {
 *=============== [  Removes Static Front Page  ]
 */
 
-//Airgame forces a static front page. It is not recommended for users to
-//switch to a blog posts front page. This removes that option from the
-//Customizer screen.
+// Airgame forces a static front page. It is not recommended for users to
+// switch to a blog posts front page. This removes that option from the
+// Customizer screen.
 
 $wp_customize->remove_section( 'static_front_page' );
 
@@ -67,10 +67,10 @@ $wp_customize->remove_section( 'static_front_page' );
 *=============== [  Title & Icon (i.e. Site Identity) Section  ]
 */
 
-//Allows the Site Title to be updated in realtime.
+// Allows the Site Title to be updated in realtime.
 $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 
-//Removes the Blog Description text field. This theme does not use it.
+// Removes the Blog Description text field. This theme does not use it.
 $wp_customize->remove_control('blogdescription');
 
 /*
@@ -95,6 +95,9 @@ require_once get_template_directory() . '/functions/customizer-functions/airgame
 
 // Images Section
 require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-images.php';
+
+// Layout Section Test ##### UPDATE THIS LATER #####
+require_once get_template_directory() . '/functions/customizer-functions/airgame-customizer-airgame-style.php';
 
 }
 add_action( 'customize_register', 'airgame_customize_register' );

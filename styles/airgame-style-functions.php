@@ -20,7 +20,7 @@ $colorAlternateBright = '#244CE5';
 
 // Focus color spectrum
 $colorFocusMedium = '#D23F47';
-$colorFocusBright = '#E3110C';
+$colorFocusBright = '#FF0000';
 
 // Monochrome color spectrom
 $colorWhitespace = '#FFFFFF';
@@ -267,12 +267,13 @@ div.footer-signup {
 .ask-button {
   width: 45%;
   height: 2.5em;
-  margin: 0.5em;
+  margin: 0.3em;
   text-transform: uppercase;
   font-size: 1.5em;
   line-height: 2.5em;
   letter-spacing: 0.1em;
   color: <?php echo $colorWhitespace; ?>;
+  transition: all 0.3s ease-out;
 }
 
 .ask-contribute {

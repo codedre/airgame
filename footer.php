@@ -62,6 +62,7 @@
         <img class="airgame-footer-logo" src="<?php echo $altlogo; ?>" alt="<?php echo get_bloginfo('name') . " campaign logo"; ?>" />
       </a>
     <?php endif; ?>
+
     <div class="airgame-disclaimer-container">
       <h2 class="airgame-disclaimer"><?php echo get_theme_mod( 'airgame_disclaimer' ); ?></h2>
     </div>
