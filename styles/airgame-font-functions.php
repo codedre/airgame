@@ -55,7 +55,7 @@ p, input {
 }
 
 .airgame-hed-box h1 {
-  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
 </style>

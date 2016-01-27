@@ -10,9 +10,6 @@ $frontPageHeadline = get_theme_mod( 'airgame_front_page_headline' );
 $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 ?>
-
-<!--===========<><><> [  Header  ] <><><>=============-->
-
 <div id="header">
   <?php get_header(); ?>
 </div>
@@ -40,9 +37,6 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
       </form>
     </div>
   </div>
-</div>
-
-<div class="airgame-container">
 </div>
 
 </div> <!-- airgame-body front-page-hero-box -->

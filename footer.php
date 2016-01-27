@@ -22,7 +22,7 @@
     -->
 
     <div class="airgame-footer-email-signup" style="background-image: url('<?php echo $footerImage; ?>')">
-      <div class="airgame-container footer-signup">
+      <div class="footer-signup">
         <div class="airgame-hed-box footer-signup">
           <h1 class="airgame_footer_email_signup_headline footer-signup"><?php echo $emailSignupHeadline; ?></h1>
         </div>

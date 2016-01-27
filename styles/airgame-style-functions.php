@@ -38,6 +38,7 @@ $colorBlack = '#1C1C1C';
 
 * {
   margin: 0;
+  margin-right: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -197,18 +198,15 @@ button {
 
 h1.footer-signup {
   font-size: 400%;
-  margin-bottom: 30px;
 }
 
 div.footer-signup {
-  padding-top: 100px;
   text-align: center;
 }
 
 .airgame-footer-email-signup {
-  min-height: 500px;
   color: <?php echo $colorWhitespace; ?>;
-  padding: 200px 50px 50px 50px;
+  padding: 100px;
   background-size: cover;
   background-position: 55% 35%;
 }
@@ -293,6 +291,7 @@ div.footer-signup {
 .ask-contribute:hover {
   background-color: <?php echo $colorWhitespace; ?>;
   color: <?php echo $colorFocusMedium; ?>;
+  border: 2px solid <?php echo $colorWhitespace; ?>;
 }
 
 .ask-volunteer {
@@ -303,6 +302,7 @@ div.footer-signup {
 .ask-volunteer:hover {
   background-color: <?php echo $colorWhitespace; ?>;
   color: <?php echo $colorPrimaryVeryDark; ?>;
+  border: 2px solid <?php echo $colorWhitespace; ?>;
 }
 
 
