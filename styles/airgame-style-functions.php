@@ -36,7 +36,9 @@ $colorBlack = '#1C1C1C';
 *=====================[ Reset ]=================================================
 */
 
-* {
+*,
+:before,
+:after {
   margin: 0;
   margin-right: 0;
   padding: 0;
@@ -337,4 +339,81 @@ div.footer-signup {
   line-height: 45px;
   font-weight: 500;
 }
+
+/*
+*=================[ Front page ]================================================
+*/
+
+.front-page-body {
+  background-color: <?php echo $colorWhitespace; ?>;
+}
+
+.front-page-hero-box {
+  min-height: 500px;
+  color: <?php echo $colorWhitespace; ?>;
+  padding: 200px 50px 50px 50px;
+  background-size: cover;
+  background-position: 55% 35%;
+}
+
+.front-page-hero-box h1 {
+  font-size: 60px;
+  line-height: 55px;
+  letter-spacing: -1px;
+}
+
+.airgame-hed-box {
+  display: inline-block;
+}
+
+.airgame-dek-box {
+  display: inline-block;
+  background-color: <?php echo $colorPrimaryDark; ?>;
+  padding: 10px 20px 7px 20px;
+}
+
+.airgame-hed-box,
+.airgame-dek-box {
+  margin-bottom: 20px;
+}
+
+.airgame-dek-box h2 {
+  color: <?php echo $colorPrimaryVeryLight; ?>;
+}
+
+.airgame-hed-box h1 {
+  text-shadow: 0 1px 2px <?php echo $colorBlack; ?>;
+}
+
+
+
+/*
+*=================[ NGP Form Pages ]============================================
+*/
+
+.ngp-form-page-body {
+  color: <?php echo $colorWhitespace; ?>;
+  padding: 50px;
+  background-color: <?php echo $colorPrimaryVeryDark; ?>;
+  background-size: cover;
+  background-position: center;
+}
+
+.ngp-form-page-container {
+
+}
+
+.ngp-form-page-form-sidebar {
+  max-width: 400px;
+  background-color: <?php echo $colorPrimaryVeryDark; ?>;
+}
+
+.ngp-form-page-caption-box {
+ padding: 25px;
+}
+
+.ngp-form-page-caption-box * {
+  padding: 0 2px 5px 0;
+}
+
 </style>

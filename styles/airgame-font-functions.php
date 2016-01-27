@@ -35,28 +35,5 @@ p, input {
     line-height: 140%;
 }
 
-.airgame-hed-box {
-  display: inline-block;
-}
-
-.airgame-dek-box {
-  display: inline-block;
-  background-color: #052B53;
-  padding: 10px 20px 7px 20px;
-}
-
-.airgame-hed-box,
-.airgame-dek-box {
-  margin-bottom: 20px;
-}
-
-.airgame-dek-box h2 {
-  color: #7997BD;
-}
-
-.airgame-hed-box h1 {
-  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-}
-
 </style>
 <?php endif ?>
