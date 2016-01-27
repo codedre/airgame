@@ -4,7 +4,7 @@
 // Load new files here, with the add_scripts function, rather than in HTML.
 
 /*
-/*============ [  Style & script enqueue  ]
+*=================[ Style & script enqueue ]====================================
 */
 
 //This is a core function which allows Wordpress to recognize other CSS and
