@@ -22,19 +22,26 @@ function add_scripts(){
       array("jquery") // Dependent scripts
     );
 
-    // Imports Now font from Open Source Font Library CDN
-    wp_register_style(
-      'airgame-font-now', // Stylesheet short handle
-      'https://fontlibrary.org/face/now' // Path
-    );
-    wp_enqueue_style( 'airgame-font-now' );
+    $selectedFonts = get_theme_mod( 'airgame_fonts' );
 
-    // Imports Droid Serif font from Google CDN
-    wp_register_style(
-      'airgame-font-droid-serif', // Stylesheet short handle
-      '//fonts.googleapis.com/css?family=Droid+Serif' // Path
-    );
-    wp_enqueue_style( 'airgame-font-droid-serif' );
+    // Enqueues Bold Fontpack fonts
+    if ( $selectedFonts === 'bold' ) {
+      require_once get_template_directory() . '/functions/font-enqueue-functions/enqueue-bold.php';
+    }
+
+    // // Imports Now font from Open Source Font Library CDN
+    // wp_register_style(
+    //   'airgame-font-now', // Stylesheet short handle
+    //   'https://fontlibrary.org/face/now' // Path
+    // );
+    // wp_enqueue_style( 'airgame-font-now' );
+    //
+    // // Imports Droid Serif font from Google CDN
+    // wp_register_style(
+    //   'airgame-font-droid-serif', // Stylesheet short handle
+    //   '//fonts.googleapis.com/css?family=Droid+Serif' // Path
+    // );
+    // wp_enqueue_style( 'airgame-font-droid-serif' );
 
 }
 add_action("wp_enqueue_scripts", "add_scripts");
