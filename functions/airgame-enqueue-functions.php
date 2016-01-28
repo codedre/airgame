@@ -7,8 +7,8 @@
 *=================[ Style & script enqueue ]====================================
 */
 
-//This is a core function which allows Wordpress to recognize other CSS and
-//JavaScript files.
+// This is a core function which allows Wordpress to recognize other CSS and
+// JavaScript files.
 
 function add_scripts(){
 

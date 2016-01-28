@@ -2,15 +2,9 @@
 
 // This file contains overrides of WordPress routing and backend options.
 
-//--------------------------Table of Contents---------------------------------//
-
-//====<><><> [  1. Defaults post structure to postname  ]
-//====<><><> [  2. Disables comments  ]
-//====<><><> [  3. Admin Dashboard Cleanup  ]
-
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  1. Defaults post structure to postname  ] <><><>=======//
-////////////////////////////////////////////////////////////////////////////////
+/*
+*=================[  Defaults post structure to postname  ]=====================
+*/
 
 // The perferred URL structure for SEO, sharing, and human-readability is
 // definitely /%postname%/, which omits ugly date / author taxonomies. This sets
@@ -24,11 +18,11 @@ function reset_permalinks() {
 }
 add_action( 'init', 'reset_permalinks' );
 
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  2. Disables comments  ] <><><>=========================//
-////////////////////////////////////////////////////////////////////////////////
+/*
+*=================[  Disables comments  ]=======================================
+*/
 
-// Default WordPress comments have all sorts of problems.
+// Default WordPress comments have all sorts of problems. You don't want them.
 // If you want comments, then use something like Disqus, which is better
 // in every way.
 
@@ -50,9 +44,11 @@ function airgame_admin_bar_render() {
 }
 add_action( 'wp_before_admin_bar_render', 'airgame_admin_bar_render' );
 
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  3. Admin Dashboard Cleanup  ] <><><>===================//
-////////////////////////////////////////////////////////////////////////////////
+/*
+*=================[  Admin Dashboard Cleanup  ]=================================
+*/
+
+// Might re-add this later
 
 // function remove_dashboard_meta() {
 //         remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );

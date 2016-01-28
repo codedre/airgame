@@ -2,18 +2,9 @@
 
 // This file loads and configures custom post and page types.
 
-//--------------------------Table of Contents---------------------------------//
-
-//====<><><> [  1. Custom Post Types  ]
-//==== [  1A. Global settings  ]
-//==== [  1B. NGP Form Page  ]
-//-- [  1B1. NGP Form Page Meta Boxes  ]
-
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  1. Custom Post Types  ] <><><>=========================//
-////////////////////////////////////////////////////////////////////////////////
-
-//=============== [  1A. Global settings  ]
+/*
+*====================[  Global settings  ]======================================
+*/
 
 // Forces Featured Image box on custom post types.
 // NGP Form Pages use Featured Images for background photos.
@@ -26,7 +17,11 @@ add_action('edit_form_after_title', function() {
     unset($wp_meta_boxes[get_post_type($post)]['advanced']);
 });
 
-//=============== [  1B. NGP Form Page  ]
+/*
+*====================[  NGP Form Pages  ]=======================================
+*/
+
+// Sets up the NGP Form Page post type
 
 function ngp_form_pages_init() {
     $args = array(
@@ -48,7 +43,9 @@ function ngp_form_pages_init() {
 }
 add_action( 'init', 'ngp_form_pages_init' );
 
-//----------- [  1B1. NGP Form Page Meta Boxes  ]
+/*
+*------------------[  NGP Form Page Meta Boxes  ]
+*/
 
 //Creates meta box
 function ngp_data_id_custom_meta() {
@@ -115,5 +112,31 @@ function ngp_data_id_meta_save( $post_id ) {
 
 }
 add_action( 'save_post', 'ngp_data_id_meta_save' );
+
+/*
+*====================[  Issue Pages  ]==========================================
+*/
+
+// Sets up the NGP Form Page post type
+
+function issue_pages_init() {
+    $args = array(
+      'label' => 'Issues',
+      'public' => true,
+      'show_ui' => true,
+      'capability_type' => 'page',
+      'hierarchical' => false,
+      'rewrite' => array('slug' => 'issues'),
+      'query_var' => true,
+      'menu_icon' => 'dashicons-format-chat',
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        )
+      );
+    register_post_type( 'issue-pages', $args );
+}
+add_action( 'init', 'issue_pages_init' );
 
 ?>
