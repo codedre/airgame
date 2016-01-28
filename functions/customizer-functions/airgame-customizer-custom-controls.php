@@ -4,6 +4,10 @@
 // control types. These types are then referenced in the add_control sections of
 // Customizer section setup files in functions/customizer-functions.
 
+/*
+*=============== [  Dropdown Select from NGP Form Pages  ]
+*/
+
 // if( class_exists( 'WP_Customize_Control' ) ):
 	class Form_Pages_Dropdown_Control extends WP_Customize_Control {
 		public $type = 'form_pages_dropdown';

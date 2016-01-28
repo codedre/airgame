@@ -10,8 +10,8 @@
 $wp_customize->add_section(
   'airgame_style',
   array(
-      'title'     => 'Airgame Style',
-      'priority'  => 50
+      'title'         => 'Airgame Style',
+      'priority'      => 50
   )
 );
 
@@ -22,15 +22,20 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
   'airgame_layout',
   array(
-    'default'            => '',
-    'transport'          => 'postMessage'
+    'transport'           => 'refresh',
+    'default'             => 'foggybottom'
   )
 );
 $wp_customize->add_control(
-  'airgame_layout',
-  array(
-    'section'  => 'airgame_style',
-    'label'    => 'Layout'
+  'airgame_layout', array(
+    'label'               => 'Layout Pack',
+    'section'             => 'airgame_style',
+    'type'                => 'radio',
+    'choices'             => array(
+      'foggybottom'       => 'Foggy Bottom',
+      'columbiaheights'   => 'Columbia Heights',
+      'farragutnorth'     => 'Farragut North'
+    )
   )
 );
 
@@ -41,15 +46,20 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
   'airgame_fonts',
   array(
-    'default'            => '',
-    'transport'          => 'postMessage'
+    'transport'           => 'refresh',
+    'default'             => 'bold'
   )
 );
 $wp_customize->add_control(
-  'airgame_fonts',
-  array(
-    'section'  => 'airgame_style',
-    'label'    => 'Fonts'
+  'airgame_fonts', array(
+    'label'               => 'Font Pack',
+    'section'             => 'airgame_style',
+    'type'                => 'radio',
+    'choices'             => array(
+      'bold'              => 'Bold',
+      'heartland'         => 'Heartland',
+      'progress'          => 'Progress'
+    )
   )
 );
 
@@ -60,16 +70,20 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
   'airgame_colors',
   array(
-    'default'            => '',
-    'transport'          => 'postMessage'
+    'transport'           => 'refresh',
+    'default'             => 'Americana'
   )
 );
 $wp_customize->add_control(
-  'airgame_colors',
-  array(
-    'section'  => 'airgame_style',
-    'label'    => 'Colors',
-    'type'     => 'text'
+  'airgame_colors', array(
+    'label'               => 'Color Pack',
+    'section'             => 'airgame_style',
+    'type'                => 'radio',
+    'choices'             => array(
+      'americana'         => 'Americana',
+      'sequoia'           => 'Sequoia',
+      'lajolla'           => 'La Jolla'
+    )
   )
 );
 

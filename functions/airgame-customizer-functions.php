@@ -6,13 +6,13 @@
 
 // To ensure forward-compatibility with Calypso, Airgame's options are located
 // either on the Customizer screen (Appearance > Customize) or on individual
-// post/page editing pages. Airgame has no discrete backend options page.
+// post/page editors. Airgame has no discrete backend options page.
 
 // Airgame adds numerous sections, and settings within those sections, to the
 // Customizer screen. Because each section and setting requires lengthy blocks
 // of code to instantiate, each section's instantiation functions have been
 // abstracted out from the customize_register function with require_once calls
-// to separate individual php files.
+// to separate php files.
 
 // These files are located within a sibling directory of this file called
 // 'customizer-functions'.
@@ -24,8 +24,7 @@
 // Calls to /scripts/theme-customizer.js, which allows realtime asynchronous
 // updating of changes made in the Customizer so users can watch them being
 // applied. This is set through the 'transport' => 'postMessage' option in the
-// add_setting code block within individual custom Customizer section php files
-// in the 'customizer-functions' folder, sibling to this file.
+// add_setting code block within individual custom Customizer section php files.
 
 // Some settings do not use postMessage but remain set to the default 'refresh'
 // setting, which refreshes the page. This is generally because the setting is
@@ -38,7 +37,7 @@
 // with live updating on the Customizer screen and you're unable to debug
 // /scripts/theme-customizer.js, change 'postMessage' to 'refresh' in
 // the Customizer section's php file within the 'customizer-functions'
-// directory.
+// directory to switch from data binding to page refresh and fix the issue.
 
 function customizer_live_preview() {
 

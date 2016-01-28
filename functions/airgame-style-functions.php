@@ -1,33 +1,87 @@
 <?php
 
+// This file gathers font and color settings set by the user in
+// the Customizer and inserts them the proper locations in the dynamic stylesheet
+// determined by the user's layout setting.
+
 // header("Content-type: text/css; charset: UTF-8");
 
 /*
-* =========== [  Variables  ]
+* =========== [  Airgame Style Variables  ]
 */
 
-// Primary color spectrum
-$colorPrimaryVeryDark = '#032140';
-$colorPrimaryDark = '#042549';
-$colorPrimaryMedium = '#052B53';
-$colorPrimaryLight = '#4B6C94';
-$colorPrimaryVeryLight = '#7997BD';
-$colorPrimaryUltraLight = '#E8EFF8';
+$selectedColors = get_theme_mod( 'airgame_colors' );
+$selectedFont = get_theme_mod( 'airgame_fonts' );
+$selectedLayout = get_theme_mod( 'airgame_layout' );
 
-// Alternate color spectrum
-$colorAlternateMedium = '#2247B0';
-$colorAlternateBright = '#244CE5';
+/*
+* =========== [  Color Packs  ]
+*/
 
-// Focus color spectrum
-$colorFocusMedium = '#D23F47';
-$colorFocusBright = '#FF0000';
+/*
+* -------- [  Americana  ]
+*/
 
-// Monochrome color spectrom
-$colorWhitespace = '#FFFFFF';
-$colorLightGrey = '#ABABAB';
-$colorMediumGrey = '#787878';
-$colorDarkGrey = '#474747';
-$colorBlack = '#1C1C1C';
+if ( $selectedColors === 'americana' ) {
+
+  // Primary color spectrum
+  $colorPrimaryVeryDark = '#032140';
+  $colorPrimaryDark = '#042549';
+  $colorPrimaryMedium = '#052B53';
+  $colorPrimaryLight = '#4B6C94';
+  $colorPrimaryVeryLight = '#7997BD';
+  $colorPrimaryUltraLight = '#E8EFF8';
+
+  // Alternate color spectrum
+  $colorAlternateMedium = '#2247B0';
+  $colorAlternateBright = '#244CE5';
+
+  // Focus color spectrum
+  $colorFocusMedium = '#D23F47';
+  $colorFocusBright = '#FF0000';
+
+  // Monochrome color spectrom
+  $colorWhitespace = '#FFFFFF';
+  $colorLightGrey = '#ABABAB';
+  $colorMediumGrey = '#787878';
+  $colorDarkGrey = '#474747';
+  $colorBlack = '#1C1C1C';
+
+}
+elseif ( $selectedColors === 'lajolla' ) {
+
+  // Primary color spectrum
+  $colorPrimaryVeryDark = '#143854';
+  $colorPrimaryDark = '#065471';
+  $colorPrimaryMedium = '#0A91AB';
+  $colorPrimaryLight = '#0CA9C7';
+  $colorPrimaryVeryLight = '#0DC0E3';
+  $colorPrimaryUltraLight = '#ADE0FF';
+
+  // Alternate color spectrum
+  $colorAlternateMedium = '#0977B8';
+  $colorAlternateBright = '#0B93E3';
+
+  // Focus color spectrum
+  $colorFocusMedium = '#FFC045';
+  $colorFocusBright = '#FF9D24';
+
+  // Monochrome color spectrom
+  $colorWhitespace = '#FFFFFF';
+  $colorLightGrey = '#ABABAB';
+  $colorMediumGrey = '#787878';
+  $colorDarkGrey = '#474747';
+  $colorBlack = '#1C1C1C';
+
+}
+
+/*
+* =========== [  Font Packs  ]
+*/
+
+/*
+* -------- [  Bold  ]
+*/
 
 //Header font, used for large, bold headlines.
 $hed = 'NowBold';
@@ -164,21 +218,19 @@ ul.menu-main li.menu-item {
   text-shadow: 5px 5px 5px red;
 }
 
-.main-nav ul ul
-{
-	display:none;
+.main-nav ul ul {
+	display: none;
   text-align: center;
-	position:absolute;
-	top:100%;
-	left:0;
-	background:#fff;
-	padding:0;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: <?php echo $colorWhitespace; ?>;
+	padding: 0;
   width: 500px;
 }
 
-.main-nav ul li:hover > ul
-{
-	display:block
+.main-nav ul li:hover > ul {
+	display:block;
 }
 
 /*
