@@ -17,7 +17,7 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 <div class="airgame-body front-page-body">
 
 <!--===========<><><> [  Hero Box  ] <><><>=============-->
-<div class="airgame-body front-page-hero-box" style="background-image: url('<?php echo $frontPageTopImage; ?>')">;
+<div class="airgame-body front-page-hero-box" style="background-image: url('<?php echo $frontPageTopImage; ?>')">
   <div class="airgame-container">
     <div class="airgame-half-container">
       <div class="airgame-hed-box">

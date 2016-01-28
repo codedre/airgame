@@ -4,56 +4,15 @@
 // the Customizer and inserts them the proper locations in the dynamic stylesheet
 // determined by the user's layout setting.
 
-// header("Content-type: text/css; charset: UTF-8");
-
 /*
-* =========== [  Airgame Style Variables  ]
+* =========== [  Sets layout, fonts, and colors based on style settings  ]
 */
 
-$selectedColors = get_theme_mod( 'airgame_colors' );
-$selectedFonts = get_theme_mod( 'airgame_fonts' );
-$selectedLayout = get_theme_mod( 'airgame_layout' );
+require_once get_template_directory() . '/functions/airgame-packs-functions.php';
 
-/*
-* =========== [  Colorpacks  ]
-*/
-
-// Colorpack: Americana
-if ( $selectedColors === 'alexandria' ) {
-  require_once get_template_directory() . '/airgame-colorpacks/colorpack-alexandria.php';
-}
-
-// Colorpack: La Jolla
-if ( $selectedColors === 'lajolla' ) {
-  require_once get_template_directory() . '/airgame-colorpacks/colorpack-lajolla.php';
-}
-
-// Colorpack: La Jolla
-if ( $selectedColors === 'tahoe' ) {
-  require_once get_template_directory() . '/airgame-colorpacks/colorpack-tahoe.php';
-}
-
-/*
-* =========== [  Font Packs  ]
-*/
-
-// Fontpack: Bold
-if ( $selectedFonts === 'bold' ) {
-  require_once get_template_directory() . '/airgame-fontpacks/fontpack-bold.php';
-}
-
-// Fontpack: Solutions
-if ( $selectedFonts === 'solutions' ) {
-  require_once get_template_directory() . '/airgame-fontpacks/fontpack-solutions.php';
-}
-
-// Fontpack: Whistlestop
-if ( $selectedFonts === 'whistlestop' ) {
-  require_once get_template_directory() . '/airgame-fontpacks/fontpack-whistlestop.php';
-}
+if ( !is_admin() ) {
 
 ?>
-<?php if ( !is_admin() ): ?>
 <style>
 
 h1, h3, h5, button {
@@ -78,9 +37,8 @@ p, input {
     line-height: 140%;
 }
 
-</style>
-<?php endif ?>
-<style>
+<?php } ?>
+
 /*
 *=====================[ Reset ]=================================================
 */
