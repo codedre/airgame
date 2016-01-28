@@ -109,7 +109,7 @@ button {
 }
 
 /*
-*=====================[ Menu ]================================================
+*=====================[ Menu ]==================================================
 */
 
 .menu {
@@ -121,6 +121,16 @@ button {
     transition: background-color 0.15s;
     position: fixed;
     text-align: center;
+}
+
+/* Dynamic jQuery classes appended / removed on scroll */
+
+.menu-switch-top {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-switch-scroll {
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .menu-main ul {
