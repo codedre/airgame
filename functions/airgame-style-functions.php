@@ -3,7 +3,7 @@
 // header("Content-type: text/css; charset: UTF-8");
 
 /*
-* =========== [  Color Variables  ]
+* =========== [  Variables  ]
 */
 
 // Primary color spectrum
@@ -29,8 +29,44 @@ $colorMediumGrey = '#787878';
 $colorDarkGrey = '#474747';
 $colorBlack = '#1C1C1C';
 
+//Header font, used for large, bold headlines.
+$hed = 'NowBold';
+
+//Subheadline (i.e. "dek") font, used for subheaders.
+$dek = 'NowRegular';
+
+//Copy font, used for large areas of text.
+$copy = 'Droid Serif';
+
 
 ?>
+<?php if ( !is_admin() ): ?>
+<style>
+
+h1, h3, h5, button {
+  font-family: <?php echo $hed ?>;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2, h4, h6, .menu li a {
+    font-family: <?php echo $dek ?>;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+p, input {
+    font-family: <?php echo $copy ?>;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba(255,255,255,0.75);
+    line-height: 140%;
+}
+
+</style>
+<?php endif ?>
 <style>
 /*
 *=====================[ Reset ]=================================================
@@ -84,18 +120,20 @@ button {
     text-align: center;
 }
 
-.menu ul {
+.menu-main ul {
     display: inline-block;
     list-style-type: none;
 }
-.menu li    {
+
+.menu li {
     display: inline-block;
     line-height: 65px;
     height: 65px;
     margin: 0 auto;
     position: relative;
 }
-.menu li a  {
+
+.menu li a {
     display: block;
     height: 65px;
     line-height: 65px;
@@ -110,11 +148,37 @@ button {
     transition: color 0.3s;
     text-shadow: 0 1px 1px <?php echo $colorPrimaryVeryDark; ?>;
 }
+
 .menu .current-menu-item a,
 .menu .current_page_item a,
 .menu a:hover {
     color: <?php echo $colorWhitespace; ?>;
+}
 
+ul.menu-main li.menu-item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.menu-main > li {
+  text-shadow: 5px 5px 5px red;
+}
+
+.main-nav ul ul
+{
+	display:none;
+  text-align: center;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0;
+  width: 500px;
+}
+
+.main-nav ul li:hover > ul
+{
+	display:block
 }
 
 /*

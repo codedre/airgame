@@ -9,10 +9,7 @@
 // If requiring a PHP file in functions.php is causing a "headers already
 // loaded" error on page load, move that line of code here to fix the error.
 
-//Style loading
-require_once( get_template_directory() . '/styles/airgame-font-functions.php' );
-
 //Font loading
-require_once( get_template_directory() . '/styles/airgame-style-functions.php' );
+require_once( get_template_directory() . '/functions/airgame-style-functions.php' );
 
 ?>
