@@ -71,7 +71,7 @@ $wp_customize->add_setting(
   'airgame_colors',
   array(
     'transport'           => 'refresh',
-    'default'             => 'Americana'
+    'default'             => 'alexandria'
   )
 );
 $wp_customize->add_control(
@@ -80,8 +80,8 @@ $wp_customize->add_control(
     'section'             => 'airgame_style',
     'type'                => 'radio',
     'choices'             => array(
-      'americana'         => 'Americana',
-      'sequoia'           => 'Sequoia',
+      'alexandria'        => 'Alexandria',
+      'tahoe'             => 'Tahoe',
       'lajolla'           => 'La Jolla'
     )
   )

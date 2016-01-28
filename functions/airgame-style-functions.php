@@ -11,87 +11,36 @@
 */
 
 $selectedColors = get_theme_mod( 'airgame_colors' );
-$selectedFont = get_theme_mod( 'airgame_fonts' );
+$selectedFonts = get_theme_mod( 'airgame_fonts' );
 $selectedLayout = get_theme_mod( 'airgame_layout' );
 
 /*
-* =========== [  Color Packs  ]
+* =========== [  Colorpacks  ]
 */
 
-/*
-* -------- [  Americana  ]
-*/
-
-if ( $selectedColors === 'americana' ) {
-
-  // Primary color spectrum
-  $colorPrimaryVeryDark = '#032140';
-  $colorPrimaryDark = '#042549';
-  $colorPrimaryMedium = '#052B53';
-  $colorPrimaryLight = '#4B6C94';
-  $colorPrimaryVeryLight = '#7997BD';
-  $colorPrimaryUltraLight = '#E8EFF8';
-
-  // Alternate color spectrum
-  $colorAlternateMedium = '#2247B0';
-  $colorAlternateBright = '#244CE5';
-
-  // Focus color spectrum
-  $colorFocusMedium = '#D23F47';
-  $colorFocusBright = '#FF0000';
-
-  // Monochrome color spectrom
-  $colorWhitespace = '#FFFFFF';
-  $colorLightGrey = '#ABABAB';
-  $colorMediumGrey = '#787878';
-  $colorDarkGrey = '#474747';
-  $colorBlack = '#1C1C1C';
-
+// Colorpack: Americana
+if ( $selectedColors === 'alexandria' ) {
+  require_once get_template_directory() . '/airgame-colorpacks/colorpack-alexandria.php';
 }
-elseif ( $selectedColors === 'lajolla' ) {
 
-  // Primary color spectrum
-  $colorPrimaryVeryDark = '#143854';
-  $colorPrimaryDark = '#065471';
-  $colorPrimaryMedium = '#0A91AB';
-  $colorPrimaryLight = '#0CA9C7';
-  $colorPrimaryVeryLight = '#0DC0E3';
-  $colorPrimaryUltraLight = '#ADE0FF';
+// Colorpack: La Jolla
+if ( $selectedColors === 'lajolla' ) {
+  require_once get_template_directory() . '/airgame-colorpacks/colorpack-lajolla.php';
+}
 
-  // Alternate color spectrum
-  $colorAlternateMedium = '#0977B8';
-  $colorAlternateBright = '#0B93E3';
-
-  // Focus color spectrum
-  $colorFocusMedium = '#FFC045';
-  $colorFocusBright = '#FF9D24';
-
-  // Monochrome color spectrom
-  $colorWhitespace = '#FFFFFF';
-  $colorLightGrey = '#ABABAB';
-  $colorMediumGrey = '#787878';
-  $colorDarkGrey = '#474747';
-  $colorBlack = '#1C1C1C';
-
+// Colorpack: La Jolla
+if ( $selectedColors === 'tahoe' ) {
+  require_once get_template_directory() . '/airgame-colorpacks/colorpack-tahoe.php';
 }
 
 /*
 * =========== [  Font Packs  ]
 */
 
-/*
-* -------- [  Bold  ]
-*/
-
-//Header font, used for large, bold headlines.
-$hed = 'NowBold';
-
-//Subheadline (i.e. "dek") font, used for subheaders.
-$dek = 'NowRegular';
-
-//Copy font, used for large areas of text.
-$copy = 'Droid Serif';
-
+// Fontpack: Bold
+if ( $selectedFonts === 'bold' ) {
+  require_once get_template_directory() . '/airgame-fontpacks/fontpack-bold.php';
+}
 
 ?>
 <?php if ( !is_admin() ): ?>
@@ -267,15 +216,11 @@ ul.menu-main li.menu-item {
   color: <?php echo $colorWhitespace; ?>;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
-  border: 6px solid transparent;
-  background-clip: padding-box;
 }
 
 .menu-actions .airgame-top-donate:hover {
   color: <?php echo $colorFocusMedium; ?>;
   background-color: <?php echo $colorWhitespace; ?>;
-  border: 6px solid transparent;
-  background-clip: padding-box;
 }
 
 .airgame-top-donate h3 {
