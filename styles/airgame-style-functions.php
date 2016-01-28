@@ -74,7 +74,7 @@ button {
 */
 
 .menu {
-    height: 50px;
+    height: 65px;
     width: 100%;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
@@ -90,15 +90,15 @@ button {
 }
 .menu li    {
     display: inline-block;
-    line-height: 50px;
-    height: 50px;
+    line-height: 65px;
+    height: 65px;
     margin: 0 auto;
     position: relative;
 }
 .menu li a  {
     display: block;
-    height: 50px;
-    line-height: 50px;
+    height: 65px;
+    line-height: 65px;
     padding: 0 15px;
     text-transform: uppercase;
     text-decoration: none;
@@ -145,26 +145,29 @@ button {
   text-align: center;
   float: right;
   clear: right;
-  width: 200px;
-  height: 50px;
+  width: 275px;
+  height: 65px;
   background-color: <?php echo $colorFocusMedium; ?>;
   color: <?php echo $colorWhitespace; ?>;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
-  border: 2px solid <?php echo $colorFocusMedium; ?>;
+  border: 6px solid transparent;
+  background-clip: padding-box;
 }
 
 .menu-actions .airgame-top-donate:hover {
   color: <?php echo $colorFocusMedium; ?>;
   background-color: <?php echo $colorWhitespace; ?>;
-  border: 2px solid <?php echo $colorFocusMedium; ?>;
+  border: 6px solid transparent;
+  background-clip: padding-box;
 }
 
 .airgame-top-donate h3 {
+  font-size: 1.1em;
   text-transform: uppercase;
   z-index: 9999;
-  letter-spacing: 2.5px;
-  line-height: 50px;
+  letter-spacing: 2px;
+  line-height: 57px;
 }
 
 /*
@@ -200,6 +203,7 @@ button {
 
 h1.footer-signup {
   font-size: 400%;
+  letter-spacing: -1px;
 }
 
 div.footer-signup {
