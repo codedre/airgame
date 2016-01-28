@@ -42,6 +42,16 @@ if ( $selectedFonts === 'bold' ) {
   require_once get_template_directory() . '/airgame-fontpacks/fontpack-bold.php';
 }
 
+// Fontpack: Solutions
+if ( $selectedFonts === 'solutions' ) {
+  require_once get_template_directory() . '/airgame-fontpacks/fontpack-solutions.php';
+}
+
+// Fontpack: Whistlestop
+if ( $selectedFonts === 'whistlestop' ) {
+  require_once get_template_directory() . '/airgame-fontpacks/fontpack-whistlestop.php';
+}
+
 ?>
 <?php if ( !is_admin() ): ?>
 <style>

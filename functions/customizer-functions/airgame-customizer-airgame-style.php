@@ -28,7 +28,7 @@ $wp_customize->add_setting(
 );
 $wp_customize->add_control(
   'airgame_layout', array(
-    'label'               => 'Layout Pack',
+    'label'               => 'Airgame Layout',
     'section'             => 'airgame_style',
     'type'                => 'radio',
     'choices'             => array(
@@ -52,13 +52,13 @@ $wp_customize->add_setting(
 );
 $wp_customize->add_control(
   'airgame_fonts', array(
-    'label'               => 'Font Pack',
+    'label'               => 'Airgame Fontpack',
     'section'             => 'airgame_style',
     'type'                => 'radio',
     'choices'             => array(
       'bold'              => 'Bold',
-      'heartland'         => 'Heartland',
-      'progress'          => 'Progress'
+      'solutions'         => 'Solutions',
+      'whistlestop'       => 'Whistlestop'
     )
   )
 );
@@ -76,7 +76,7 @@ $wp_customize->add_setting(
 );
 $wp_customize->add_control(
   'airgame_colors', array(
-    'label'               => 'Color Pack',
+    'label'               => 'Airgame Colorpack',
     'section'             => 'airgame_style',
     'type'                => 'radio',
     'choices'             => array(
