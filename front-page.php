@@ -1,7 +1,15 @@
 <?php
 
+// This is the static front page hardcoded into the theme. Lots of php is
+// compiled into html via this file, based on settings edited by the user in
+// the Customizer backend screen.
+
+// The user can add to this page by designating a Page as the 'Front Page'.
+// Because this file retains the Wordpress Loop, it will be able to render
+// content from the page designated as the Front Page.
+
 /*
-* Variable declarations
+*====================[  Variable declarations  ]================================
 */
 
 $frontPageTopImage = get_theme_mod( 'airgame_front_page_top_image' );
@@ -10,13 +18,20 @@ $frontPageHeadline = get_theme_mod( 'airgame_front_page_headline' );
 $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 ?>
+
+<!--
+=======================[  Header  ]=============================================
+-->
+
 <div id="header">
   <?php get_header(); ?>
 </div>
 
 <div class="airgame-body front-page-body">
 
-<!--===========<><><> [  Hero Box  ] <><><>=============-->
+<!--
+=======================[  Hero Box  ]===========================================
+-->
 <div class="airgame-body front-page-hero-box" style="background-image: url('<?php echo $frontPageTopImage; ?>')">
   <div class="airgame-container">
     <div class="airgame-half-container">
@@ -41,15 +56,18 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 </div> <!-- airgame-body front-page-hero-box -->
 
-<!--===========<><><> [  Loop  ] <><><>=============-->
+<!--
+=======================[  The Loop  ]===========================================
+-->
 
-<!-- the WP Loop -->
 <div class="airgame-content-wrapper">
   <div class="airgame-content-container">
     <?php get_template_part("loop"); ?>
   </div>
 </div>
 
-<!--===========<><><> [  Footer  ] <><><>=============-->
+<!--
+=======================[  Footer  ]=============================================
+-->
 
 <?php get_footer(); ?>

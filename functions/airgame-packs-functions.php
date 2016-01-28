@@ -1,5 +1,10 @@
 <?php
 
+// This file, which is require_once'd by style-functions.php, uses
+// conditional statements to determine which variable values to feed to that
+// file, based on the settings the user has determined in the backend
+// Customizer screen.
+
 /*
 * =========== [  Airgame Style Variables  ]
 */

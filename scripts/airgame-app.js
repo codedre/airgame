@@ -1,7 +1,9 @@
 
-////////////////////////////////////////////////////////////////////////////////
-//===========<><><> [  Global scripts  ] <><><>===============================//
-////////////////////////////////////////////////////////////////////////////////
+// This file contains global JavaScript that fires on most or all pages.
+
+//
+//==============[  Top menu jQuery background color fill on scroll  ]===========
+//
 
 (function($){
   $(document).ready(function() {
