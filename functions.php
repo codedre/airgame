@@ -16,8 +16,11 @@ require_once get_template_directory() . '/functions/airgame-custom-post-types-fu
 // Customizer ( Appearance > Customize ) custom options
 require_once get_template_directory() . '/functions/airgame-customizer-functions.php';
 
-//Menu initialization
+// Menu initialization
 require_once get_template_directory() . '/functions/airgame-menu-functions.php';
+
+// Social feed
+require_once get_template_directory() . '/functions/airgame-social-feed-functions.php';
 
 // IMPORTANT NOTE: Functions that interfere with HTTP headers must be called after wp_head.
 // These have been abstracted out to /functions/airgame-after-headers-functions.php and are

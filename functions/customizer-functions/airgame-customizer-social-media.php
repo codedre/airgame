@@ -83,7 +83,7 @@ $wp_customize->add_control(
 */
 
 $wp_customize->add_setting(
-  'airgame_twitter_profile_url',
+  'airgame_twitter_username',
   array(
     'default'            => '',
     'sanitize_callback'  => 'airgame_sanitize',
@@ -91,10 +91,10 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control(
-  'airgame_twitter_profile_url',
+  'airgame_twitter_username',
   array(
     'section'  => 'social_media',
-    'label'    => 'Twitter Profile URL',
+    'label'    => 'Twitter Username',
     'type'     => 'text'
   )
 );
