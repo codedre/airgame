@@ -20,7 +20,7 @@ $wp_customize->add_section(
 */
 
 $wp_customize->add_setting(
-  'airgame_facebook_page_url',
+  'airgame_facebook_page_id',
   array(
     'default'            => '',
     'sanitize_callback'  => 'airgame_sanitize',
@@ -28,10 +28,10 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control(
-  'airgame_facebook_page_url',
+  'airgame_facebook_page_id',
   array(
     'section'  => 'social_media',
-    'label'    => 'Facebook Page URL',
+    'label'    => 'Facebook Page ID',
     'type'     => 'text'
   )
 );

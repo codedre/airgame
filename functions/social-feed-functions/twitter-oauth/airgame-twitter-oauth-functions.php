@@ -24,5 +24,3 @@ $twitter = new StormTwitter($config);
 // getTweets(twitter_screenname, number_of_tweets, custom_parameters_to_go_twitter);
 
 $tweets = $twitter->getTweets($temp_username, 4, array('include_rts' => true, 'exclude_replies' => true));
-
-?>
