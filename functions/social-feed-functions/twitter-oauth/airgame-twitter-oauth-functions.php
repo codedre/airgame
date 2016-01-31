@@ -25,8 +25,4 @@ $twitter = new StormTwitter($config);
 
 $tweets = $twitter->getTweets($temp_username, 4, array('include_rts' => true, 'exclude_replies' => true));
 
-echo "<pre>";
-var_dump($tweets);
-echo "</pre>";
-
 ?>
