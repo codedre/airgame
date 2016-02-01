@@ -24,5 +24,13 @@
         }
 
     });
+
+    // Initialized Unslider social feed slider
+    $('.social-feed-slider').unslider({
+      autoplay: true,
+      speed: 500,
+      delay: 5000
+    });
+
   })
 })(jQuery);
