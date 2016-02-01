@@ -27,9 +27,19 @@ if ( $selectedColors === 'lajolla' ) {
   require_once get_template_directory() . '/airgame-colorpacks/colorpack-lajolla.php';
 }
 
-// Colorpack: La Jolla
+// Colorpack: Tahoe
 if ( $selectedColors === 'tahoe' ) {
   require_once get_template_directory() . '/airgame-colorpacks/colorpack-tahoe.php';
+}
+
+// Colorpack: Sandestin
+if ( $selectedColors === 'sandestin' ) {
+  require_once get_template_directory() . '/airgame-colorpacks/colorpack-sandestin.php';
+}
+
+// Colorpack: Skagway
+if ( $selectedColors === 'skagway' ) {
+  require_once get_template_directory() . '/airgame-colorpacks/colorpack-skagway.php';
 }
 
 /*

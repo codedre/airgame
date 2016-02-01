@@ -186,14 +186,14 @@ ul.menu-main li.menu-item {
 .menu-actions .airgame-logo {
   float: left;
   clear: left;
-  width: 215px;
+  width: 250px;
 }
 
 .menu-actions .airgame-top-donate {
   text-align: center;
   float: right;
   clear: right;
-  width: 275px;
+  width: 250px;
   height: 65px;
   background-color: <?php echo $colorFocusMedium; ?>;
   color: <?php echo $colorWhitespace; ?>;
@@ -220,7 +220,6 @@ ul.menu-main li.menu-item {
 
 .front-page-hero-email-signup input,
 .front-page-hero-email-signup button {
-  border: 2px solid <?php echo $colorPrimaryLight; ?>;
   padding: 10px;
   font-size: 120%;
 }
@@ -243,6 +242,7 @@ ul.menu-main li.menu-item {
   background-color: <?php echo $colorPrimaryMedium; ?>;
   color: <?php echo $colorWhitespace; ?>;
   text-transform: uppercase;
+  border: 3px solid <?php echo $colorPrimaryMedium; ?>;
 }
 
 h1.footer-signup {

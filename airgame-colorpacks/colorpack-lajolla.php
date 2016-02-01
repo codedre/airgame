@@ -26,5 +26,3 @@ $colorLightGrey = '#ABABAB';
 $colorMediumGrey = '#787878';
 $colorDarkGrey = '#474747';
 $colorBlack = '#1C1C1C';
-
-?>

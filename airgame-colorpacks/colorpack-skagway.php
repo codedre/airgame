@@ -1,24 +1,24 @@
 <?php
 
 /*
-* =========== [  Airgame Colorpack: Alexandria  ]
+* =========== [  Airgame Colorpack: Skagway  ]
 */
 
 // Primary color spectrum
-$colorPrimaryVeryDark = '#032140';
-$colorPrimaryDark = '#042549';
-$colorPrimaryMedium = '#052B53';
-$colorPrimaryLight = '#4B6C94';
-$colorPrimaryVeryLight = '#7997BD';
-$colorPrimaryUltraLight = '#E8EFF8';
+$colorPrimaryVeryDark = '#00261C';
+$colorPrimaryDark = '#044C29';
+$colorPrimaryMedium = '#167F39';
+$colorPrimaryLight = '#45BF55';
+$colorPrimaryVeryLight = '#96ED89';
+$colorPrimaryUltraLight = '#D0FFC9';
 
 // Alternate color spectrum
 $colorAlternateMedium = '#2247B0';
 $colorAlternateBright = '#244CE5';
 
 // Focus color spectrum
-$colorFocusMedium = '#D23F47';
-$colorFocusBright = '#FF0000';
+$colorFocusMedium = '#FFAA00';
+$colorFocusBright = '#FFBB00';
 
 // Monochrome color spectrom
 $colorWhitespace = '#FFFFFF';

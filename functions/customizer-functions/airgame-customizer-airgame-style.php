@@ -30,7 +30,7 @@ $wp_customize->add_control(
   'airgame_layout', array(
     'label'               => 'Airgame Layout',
     'section'             => 'airgame_style',
-    'type'                => 'radio',
+    'type'                => 'select',
     'choices'             => array(
       'foggybottom'       => 'Foggy Bottom',
       'columbiaheights'   => 'Columbia Heights',
@@ -54,7 +54,7 @@ $wp_customize->add_control(
   'airgame_fonts', array(
     'label'               => 'Airgame Fontpack',
     'section'             => 'airgame_style',
-    'type'                => 'radio',
+    'type'                => 'select',
     'choices'             => array(
       'bold'              => 'Bold',
       'solutions'         => 'Solutions',
@@ -78,11 +78,13 @@ $wp_customize->add_control(
   'airgame_colors', array(
     'label'               => 'Airgame Colorpack',
     'section'             => 'airgame_style',
-    'type'                => 'radio',
+    'type'                => 'select',
     'choices'             => array(
       'alexandria'        => 'Alexandria',
       'tahoe'             => 'Tahoe',
-      'lajolla'           => 'La Jolla'
+      'lajolla'           => 'La Jolla',
+      'sandestin'         => 'Sandestin',
+      'skagway'           => 'Skagway'
     )
   )
 );

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8 without BOM" />
+    <meta charset="UTF-8" />
     <?php wp_head(); ?>
     <title>
       <?php
