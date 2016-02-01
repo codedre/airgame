@@ -12,13 +12,13 @@
   ?>
 
   <!--
-  * Conditional statement that fires on form pages only.
+  * Conditional statement that fires on form pages only
   -->
 
   <?php if ( get_post_type() !== 'ngp-form-pages' ): ?>
 
     <!--
-    * Email signup section over large image.
+    * Email signup section over large image
     -->
 
     <div class="airgame-footer-email-signup" style="background-image: url('<?php echo $footerImage; ?>')">
@@ -35,28 +35,41 @@
     </div>
 
     <!--
-    * Contribute / Volunteer ask button & links section over lightened main color.
+    * Ask button & links section over lightened main color.
     -->
 
     <div class="airgame-footer-ask-buttons">
+
+      <!--
+      * Contribute / Volunteer buttons
+      -->
+
       <div class="ask-buttons-container">
         <a href="<?php echo get_theme_mod( 'airgame_contribute_button_form' ); ?>">
           <button class="ask-button ask-contribute airgame_contribute_button_text">
             <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
           </button>
         </a>
+
         <a href="<?php echo get_theme_mod( 'airgame_volunteer_button_form' ); ?>">
           <button class="ask-button ask-volunteer airgame_volunteer_button_text">
             <?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?>
           </button>
         </a>
       </div>
+
+      <!--
+      * Social media link icons
+      -->
+
+      <?php require_once get_template_directory() . '/partials/partial-footer-social-icons.php'; ?>
+
     </div>
 
   <?php endif; ?>
 
   <!--
-  * General footer content section over dark main color.
+  * General footer content section over dark main color
   -->
 
   <div class="airgame-footer">
