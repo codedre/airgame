@@ -1,4 +1,4 @@
-<?php
+<?php get_header();
 
 // This is the static front page hardcoded into the theme. Lots of php is
 // compiled into html via this file, based on settings edited by the user in
@@ -18,14 +18,6 @@ $frontPageHeadline = get_theme_mod( 'airgame_front_page_headline' );
 $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 ?>
-
-<!--
-=======================[  Header  ]=============================================
--->
-
-<div id="header">
-  <?php get_header(); ?>
-</div>
 
 <div class="airgame-body front-page-body">
 
@@ -62,7 +54,7 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 
 <div class="airgame-content-wrapper">
   <div class="airgame-content-container">
-    <?php require_once get_template_directory() . '/functions/social-feed-functions/twitter-oauth/airgame-twitter-oauth-functions.php'; ?>
+    <?php require_once get_template_directory() . '/partials/partial-social-feed.php'; ?>
     <?php get_template_part("loop"); ?>
   </div>
 </div>

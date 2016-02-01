@@ -50,5 +50,3 @@ if ( $selectedFonts === 'solutions' ) {
 if ( $selectedFonts === 'whistlestop' ) {
   require_once get_template_directory() . '/airgame-fontpacks/fontpack-whistlestop.php';
 }
-
-?>

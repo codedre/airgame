@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8 without BOM" />
+    <?php wp_head(); ?>
     <title>
       <?php
         global $page, $paged;
@@ -11,8 +13,6 @@
 
       ?>
     </title>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <?php wp_head(); ?>
     <?php require_once( get_template_directory() . '/functions/airgame-after-headers-functions.php' ); ?>
   </head>
   <body>
@@ -42,3 +42,4 @@
           </div>
     <?php endif; ?>
     </div>
+    <?php

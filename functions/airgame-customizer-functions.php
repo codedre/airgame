@@ -149,5 +149,3 @@ add_action( 'wp_head', 'customizer_css' );
 function airgame_sanitize( $input ) {
 	return strip_tags( stripslashes( $input ) );
 }
-
-?>

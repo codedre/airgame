@@ -11,5 +11,3 @@
 
 //Style functions file
 require_once( get_template_directory() . '/functions/airgame-style-functions.php' );
-
-?>

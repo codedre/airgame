@@ -47,7 +47,6 @@ p, input {
 :before,
 :after {
   margin: 0;
-  margin-right: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -168,6 +167,7 @@ ul.menu-main li.menu-item {
   position: fixed;
   top: 0;
   width: 100%;
+  width: 100vw;
   z-index: 999;
   pointer-events: none;
 }
@@ -305,6 +305,7 @@ div.footer-signup {
 
 .airgame-footer-ask-buttons {
   width: 100%;
+  width: 100vw;
   padding: 2em;
   text-align: center;
   background-color: <?php echo $colorPrimaryDark; ?>
@@ -348,6 +349,47 @@ div.footer-signup {
   background-color: <?php echo $colorWhitespace; ?>;
   color: <?php echo $colorPrimaryVeryDark; ?>;
   border: 2px solid <?php echo $colorWhitespace; ?>;
+}
+
+.soc {
+  display: block;
+  font-size: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.soc li {
+  display: inline-block;
+  /*margin: 12px;
+  margin: 1.2rem;*/
+}
+
+.soc a, .soc svg {
+  display: block;
+}
+
+.soc a {
+  position: relative;
+  height: 30px;   height: 3rem;
+  width: 30px;    width: 3rem;
+  margin: 15px 5px;   margin: 1.5rem 0.5rem;
+}
+
+.soc svg {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-footer {
+color: <?php echo $colorWhitespace; ?>;
+fill: <?php echo $colorWhitespace; ?>;
+transition: all 0.3s ease-out;
+}
+
+.icon-footer:hover {
+color: <?php echo $colorPrimaryDark; ?>;
+fill: <?php echo $colorPrimaryDark; ?>;
+background-color: <?php echo $colorWhitespace; ?>;
 }
 
 

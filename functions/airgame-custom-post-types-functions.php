@@ -138,5 +138,3 @@ function issue_pages_init() {
     register_post_type( 'issue-pages', $args );
 }
 add_action( 'init', 'issue_pages_init' );
-
-?>
