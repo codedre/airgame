@@ -49,12 +49,17 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 </div> <!-- airgame-body front-page-hero-box -->
 
 <!--
+=======================[  Social feed  ]========================================
+-->
+
+<?php require_once get_template_directory() . '/partials/partial-social-feed.php'; ?>
+
+<!--
 =======================[  The Loop  ]===========================================
 -->
 
 <div class="airgame-content-wrapper">
   <div class="airgame-content-container">
-    <?php require_once get_template_directory() . '/partials/partial-social-feed.php'; ?>
     <?php get_template_part("loop"); ?>
   </div>
 </div>

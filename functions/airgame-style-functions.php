@@ -517,12 +517,33 @@ background-color: <?php echo $colorWhitespace; ?>;
 *=================[ Social feed ]===============================================
 */
 
+.social-feed-wrapper {
+  vertical-align: middle;
+  background-color: <?php echo $colorPrimaryUltraLight; ?>;
+  padding: 50px;
+}
+
+.social-feed-wrapper p.social-text {
+  color: <?php echo $colorDarkGrey; ?>;
+  font-size: 150%;
+}
+
+.social-feed-wrapper p.social-time {
+  color: <?php echo $colorPrimaryVeryLight; ?>;
+  font-family: <?php echo $hed; ?>;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.social-feed-slider {
+  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 .social-post {
   vertical-align: middle;
   text-align: center;
-  border: 1px solid red;
-  margin: 25px solid <?php echo $colorPrimaryUltraLight; ?>;
-  padding: 20px;
 }
 
 
