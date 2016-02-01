@@ -16,13 +16,15 @@ function fetchUrl($url){
 
 }
 
-$profile_id = "the_profile_id_of_the_page_you_want";
+$profile_id = get_theme_mod( 'airgame_facebook_page_id' );
 
 //App Info, needed for Auth
-$app_id = "your_app_id_in_here";
-$app_secret = "your_app_secret_in_here";
+$app_id = get_theme_mod( 'airgame_facebook_app_id' );
+$app_secret = get_theme_mod( 'airgame_facebook_app_secret' );
 
 //Retrieve auth token
 $authToken = fetchUrl("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$app_secret}");
 
-$json_object = fetchUrl("https://graph.facebook.com/{$profile_id}/feed?{$authToken}");
+$fb_json = fetchUrl("https://graph.facebook.com/{$profile_id}/feed?{$authToken}");
+
+$fb_posts = json_decode( $fb_json );

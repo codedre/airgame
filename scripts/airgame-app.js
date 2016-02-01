@@ -25,13 +25,12 @@
 
     });
 
-    // Initialized Unslider social feed slider
+    // Initializes Unslider social feed slider
     $('.social-feed-slider').unslider({
-      autoplay: true,
+      autoplay: false,
       speed: '500',
       delay: '5000',
-      animateHeight: true,
-      fluid: true
+      animateHeight: true
     });
 
   })

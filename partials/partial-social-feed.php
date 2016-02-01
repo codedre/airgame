@@ -1,32 +1,40 @@
-<?php require_once get_template_directory() . '/functions/social-feed-functions/twitter-oauth/airgame-twitter-oauth-functions.php'; ?>
+<?php require_once get_template_directory() . '/functions/airgame-social-feed-functions.php'; ?>
 
 <div class="social-feed-wrapper">
 	<div class="social-feed-slider">
 		<ul>
-			<li>
-	      <div class="social-post">
-	        <p class="social-text"><?php echo $tweets['0']['text']; ?></p>
-	        <p class="social-time"><?php echo $tweets['0']['created_at']; ?></p>
-	      </div>
-	    </li>
-			<li>
-	      <div class="social-post">
-	        <p class="social-text"><?php echo $tweets['1']['text']; ?></p>
-	        <p class="social-time"><?php echo $tweets['1']['created_at']; ?></p>
-	      </div>
-			</li>
-			<li>
-	      <div class="social-post">
-	        <p class="social-text"><?php echo $tweets['2']['text']; ?></p>
-	        <p class="social-time"><?php echo $tweets['2']['created_at']; ?></p>
-	      </div>
-			</li>
-	    <li>
-	      <div class="social-post">
-	        <p class="social-text"><?php echo $tweets['3']['text']; ?></p>
-	        <p class="social-time"><?php echo $tweets['3']['created_at']; ?></p>
-	      </div>
-	    </li>
+			<?php if (isset( $slider_post_1 )) { ?>
+				<li>
+		      <div class="social-post">
+		        <p class="social-text"><?php echo $slider_post_1['text']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_1['created_at']; ?></p>
+		      </div>
+		    </li>
+			<?php } ?>
+			<?php if (isset( $slider_post_2 )) { ?>
+				<li>
+		      <div class="social-post">
+		        <p class="social-text"><?php echo $slider_post_2['text']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_2['created_at']; ?></p>
+		      </div>
+				</li>
+			<?php } ?>
+			<?php if (isset( $slider_post_3 )) { ?>
+				<li>
+		      <div class="social-post">
+		        <p class="social-text"><?php echo $slider_post_3['text']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_3['created_at']; ?></p>
+		      </div>
+				</li>
+			<?php } ?>
+			<?php if (isset( $slider_post_4 )) { ?>
+		    <li>
+		      <div class="social-post">
+		        <p class="social-text"><?php echo $slider_post_4['text']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_4['created_at']; ?></p>
+		      </div>
+		    </li>
+			<?php } ?>
 		</ul>
 	</div>
 </div>

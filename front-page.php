@@ -52,13 +52,24 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 =======================[  Social feed  ]========================================
 -->
 
-<?php require_once get_template_directory() . '/partials/partial-social-feed.php'; ?>
+<?php
+  if (isset($tweets)) {
+    require_once get_template_directory() . '/partials/partial-social-feed.php';
+  }
+?>
 
 <!--
 =======================[  The Loop  ]===========================================
 -->
 
 <div class="airgame-content-wrapper">
+  <?php
+
+  echo "<pre style=\"word-wrap: break-word;\">";
+  var_dump($fb_posts);
+  echo "</pre>";
+
+  ?>
   <div class="airgame-content-container">
     <?php get_template_part("loop"); ?>
   </div>

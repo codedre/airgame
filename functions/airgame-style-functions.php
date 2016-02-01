@@ -93,6 +93,7 @@ button {
     transition: background-color 0.15s;
     position: fixed;
     text-align: center;
+    z-index: 9989;
 }
 
 /* Dynamic jQuery classes appended / removed on scroll */
@@ -180,7 +181,7 @@ ul.menu-main li.menu-item {
   top: 0;
   width: 100%;
   width: 100vw;
-  z-index: 999;
+  z-index: 9990;
   pointer-events: none;
 }
 
@@ -520,7 +521,7 @@ background-color: <?php echo $colorWhitespace; ?>;
 .social-feed-wrapper {
   vertical-align: middle;
   background-color: <?php echo $colorPrimaryUltraLight; ?>;
-  padding: 50px;
+  padding: 30px;
 }
 
 .social-feed-wrapper p.social-text {
@@ -544,6 +545,7 @@ background-color: <?php echo $colorWhitespace; ?>;
 .social-post {
   vertical-align: middle;
   text-align: center;
+  margin: 30px;
 }
 
 
