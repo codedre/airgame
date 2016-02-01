@@ -45,17 +45,15 @@
       -->
 
       <div class="ask-buttons-container">
+
         <a href="<?php echo get_theme_mod( 'airgame_contribute_button_form' ); ?>">
           <button class="ask-button ask-contribute airgame_contribute_button_text">
             <?php echo get_theme_mod( 'airgame_contribute_button_text' ); ?>
-          </button>
-        </a>
-
+          </button></a>
         <a href="<?php echo get_theme_mod( 'airgame_volunteer_button_form' ); ?>">
           <button class="ask-button ask-volunteer airgame_volunteer_button_text">
             <?php echo get_theme_mod( 'airgame_volunteer_button_text' ); ?>
-          </button>
-        </a>
+          </button></a>
       </div>
 
       <!--

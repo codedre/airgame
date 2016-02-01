@@ -55,6 +55,11 @@ p, input {
 *=====================[ Page setup ]============================================
 */
 
+html {
+  width: 100%;
+  width: 100vw;
+}
+
 body {
   background-color: <?php echo $colorPrimaryVeryDark; ?>;
 }
@@ -97,7 +102,7 @@ button {
 }
 
 .menu-switch-scroll {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: <?php echo $colorPrimaryMedium; ?>;
 }
 
 .menu-main ul {
