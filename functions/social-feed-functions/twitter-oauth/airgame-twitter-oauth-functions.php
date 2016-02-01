@@ -14,7 +14,7 @@ $config = array(
   'secret' => $temp_secret,
   'token' => $temp_token,
   'token_secret' => $temp_token_secret,
-  'screenname' => $temp_username, //This is now deprecated and you shouldn't define this - but it's here for backwards compatibility
+  'screenname' => '', //This is now deprecated and you shouldn't define this - but it's here for backwards compatibility
   'cache_expire' => 3600 //The duration of the cache
 );
 

@@ -1,7 +1,7 @@
 <?php
 
 // This file gathers font and color settings set by the user in
-// the Customizer and inserts them the proper locations in the dynamic stylesheet
+// the Customizer and inserts them in the proper locations in the dynamic stylesheet
 // determined by the user's layout setting.
 
 /*
@@ -155,9 +155,16 @@ ul.menu-main li.menu-item {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background: <?php echo $colorWhitespace; ?>;
+	background-color: <?php echo $colorPrimaryLight; ?>;
+  -webkit-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 	padding: 0;
-  width: 500px;
+  min-width: 150px;
+  height: 50px;
+}
+
+.main-nav ul ul:hover {
+	background-color: <?php echo $colorPrimaryDark; ?>;
 }
 
 .main-nav ul li:hover > ul {
@@ -507,8 +514,16 @@ background-color: <?php echo $colorWhitespace; ?>;
 }
 
 /*
-*=================[ Menu Dropdown ]=============================================
+*=================[ Social feed ]===============================================
 */
+
+.social-post {
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid red;
+  margin: 25px solid <?php echo $colorPrimaryUltraLight; ?>;
+  padding: 20px;
+}
 
 
 
