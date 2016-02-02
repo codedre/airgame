@@ -25,7 +25,7 @@ $slider_post_2 = $tweets[1];
 $slider_post_3 = $tweets[2];
 $slider_post_4 = $tweets[3];
 
-$slider_post_1_date = $tweets[0]->created_at;
-$slider_post_2_date = $tweets[1]->created_at;
-$slider_post_3_date = $tweets[2]->created_at;
-$slider_post_4_date = $tweets[3]->created_at;
+// $slider_post_1_date = $tweets[0]->created_at;
+// $slider_post_2_date = $tweets[1]->created_at;
+// $slider_post_3_date = $tweets[2]->created_at;
+// $slider_post_4_date = $tweets[3]->created_at;

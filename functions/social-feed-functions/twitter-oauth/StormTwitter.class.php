@@ -16,7 +16,8 @@ class StormTwitter {
     'token' => '',
     'token_secret' => '',
     'screenname' => '',
-    'cache_expire' => 3600
+    'cache_expire' => '',
+    'count' => ''
   );
 
   public $st_last_error = false;
@@ -155,7 +156,7 @@ class StormTwitter {
       $cache[$cachename]['time'] = time();
       $cache[$cachename]['tweets'] = $result;
       $file = $this->getCacheLocation();
-      file_put_contents($file,json_encode($cache));
+      file_put_contents($file, json_encode($cache));
     } else {
       if (is_array($results) && isset($result['errors'][0]) && isset($result['errors'][0]['message'])) {
         $last_error = '['.date('r').'] Twitter error: '.$result['errors'][0]['message'];
