@@ -63,13 +63,6 @@ $frontPageSubheadline = get_theme_mod( 'airgame_front_page_subheadline' );
 -->
 
 <div class="airgame-content-wrapper">
-  <?php
-
-  echo "<pre style=\"word-wrap: break-word;\">";
-  var_dump($fb_posts);
-  echo "</pre>";
-
-  ?>
   <div class="airgame-content-container">
     <?php get_template_part("loop"); ?>
   </div>

@@ -7,7 +7,7 @@
 				<li>
 		      <div class="social-post">
 		        <p class="social-text"><?php echo $slider_post_1['text']; ?></p>
-		        <p class="social-time"><?php echo $slider_post_1['created_at']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_1_date; ?></p>
 		      </div>
 		    </li>
 			<?php } ?>
@@ -15,7 +15,7 @@
 				<li>
 		      <div class="social-post">
 		        <p class="social-text"><?php echo $slider_post_2['text']; ?></p>
-		        <p class="social-time"><?php echo $slider_post_2['created_at']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_2_date; ?></p>
 		      </div>
 				</li>
 			<?php } ?>
@@ -23,7 +23,7 @@
 				<li>
 		      <div class="social-post">
 		        <p class="social-text"><?php echo $slider_post_3['text']; ?></p>
-		        <p class="social-time"><?php echo $slider_post_3['created_at']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_3_date; ?></p>
 		      </div>
 				</li>
 			<?php } ?>
@@ -31,7 +31,7 @@
 		    <li>
 		      <div class="social-post">
 		        <p class="social-text"><?php echo $slider_post_4['text']; ?></p>
-		        <p class="social-time"><?php echo $slider_post_4['created_at']; ?></p>
+		        <p class="social-time"><?php echo $slider_post_4_date; ?></p>
 		      </div>
 		    </li>
 			<?php } ?>
